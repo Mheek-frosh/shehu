@@ -47,6 +47,45 @@ export const PROJECTS = [
   }
 ];
 
+export const BLOG_POSTS = [
+  {
+    id: 1,
+    title: 'Shehu ABG Announces New Civic Tech Initiative for Youth',
+    category: 'Innovation',
+    date: 'November 14, 2025',
+    description: 'The newly envisioned initiative will serve as a statewide center for technical training and applied research in the digital economy.',
+    image: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=800'
+  },
+  {
+    id: 2,
+    title: 'Impact Group Participates in Educational Roundtable',
+    category: 'Education',
+    date: 'May 23, 2025',
+    image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=400'
+  },
+  {
+    id: 3,
+    title: 'Launch of NextGen Agricultural Support Programme',
+    category: 'Agriculture',
+    date: 'March 4, 2025',
+    image: 'https://images.unsplash.com/photo-1592982537447-6f296b0266cd?auto=format&fit=crop&q=80&w=400'
+  },
+  {
+    id: 4,
+    title: 'State Ministry Partners with Impact Group for Workshop',
+    category: 'Partnership',
+    date: 'February 19, 2025',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400'
+  },
+  {
+    id: 5,
+    title: 'Shehu ABG Receives Award of Excellence in Leadership',
+    category: 'Consultation',
+    date: 'January 14, 2025',
+    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=400'
+  }
+];
+
 export const MANIFESTO_CATEGORIES = [
   { id: '01', title: 'Education', description: '[Detailed administrator-provided strategy on education reform, curriculum updates, and infrastructure.]' },
   { id: '02', title: 'Healthcare', description: '[Comprehensive healthcare coverage plan, hospital upgrades, and public health initiatives.]' },

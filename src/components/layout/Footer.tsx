@@ -2,19 +2,22 @@ import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
-    <footer className="bg-[var(--color-navy)] text-white pt-16 pb-8">
+    <footer className="bg-gray-900 text-white pt-16 pb-8">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <div className="md:col-span-1">
-            <h3 className="text-2xl font-display font-bold mb-4">SHEHU ABG<br/>IMPACT GROUP</h3>
+            <div className="flex items-center space-x-3 mb-6">
+              <img src="/src/assets/pdp-logo.png" alt="PDP Logo" className="h-12 w-auto bg-white rounded-full p-1" />
+              <h3 className="text-2xl font-display font-bold tracking-tight text-[var(--color-pdp-green)]">SHEHU ABG<br/>IMPACT</h3>
+            </div>
             <p className="text-gray-300 text-sm mb-6">
               Empowering communities and fostering grassroots development through visionary leadership and impactful civic engagement.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-white hover:text-[var(--color-green-accent)] transition-colors">Facebook</a>
-              <a href="#" className="text-white hover:text-[var(--color-green-accent)] transition-colors">Twitter</a>
-              <a href="#" className="text-white hover:text-[var(--color-green-accent)] transition-colors">Instagram</a>
-              <a href="#" className="text-white hover:text-[var(--color-green-accent)] transition-colors">Youtube</a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">Facebook</a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">Twitter</a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">Instagram</a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">Youtube</a>
             </div>
           </div>
           

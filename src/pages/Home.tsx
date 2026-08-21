@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Activity, BookOpen, Users, Map, X } from 'lucide-react';
-import { PROJECTS } from '../data/mockData';
+import { PROJECTS, BLOG_POSTS } from '../data/mockData';
 
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState<any>(null);
@@ -164,6 +164,66 @@ export default function Home() {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Blog Section */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="flex justify-between items-end mb-12">
+            <div>
+              <span className="text-[var(--color-pdp-green)] font-bold tracking-wider text-sm uppercase mb-2 block">Blog</span>
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900">Latest News and Insights</h2>
+            </div>
+            <Link to="/events" className="hidden md:flex items-center text-gray-900 font-semibold hover:text-[var(--color-pdp-green)] transition-colors">
+              View All Posts <ArrowRight className="ml-2 w-5 h-5 -rotate-45" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            {/* Featured Post */}
+            <Link to="/events" className="lg:col-span-7 group block relative rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-shadow bg-gray-50 border border-gray-100 pb-6 h-full flex flex-col">
+              <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] lg:aspect-[4/3] xl:aspect-[16/9] mb-6 overflow-hidden rounded-[2rem]">
+                <img src={BLOG_POSTS[0].image} alt={BLOG_POSTS[0].title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute top-6 left-6 bg-orange-400 text-gray-900 font-semibold px-4 py-1.5 rounded-full text-sm shadow-md">
+                  {BLOG_POSTS[0].category}
+                </div>
+              </div>
+              <div className="px-8 flex-grow flex flex-col">
+                <div className="flex items-center text-gray-500 text-sm mb-3">
+                  <span className="mr-2">🗓</span> {BLOG_POSTS[0].date}
+                </div>
+                <h3 className="text-2xl lg:text-3xl font-display font-bold text-gray-900 mb-4 group-hover:text-[var(--color-pdp-green)] transition-colors">
+                  {BLOG_POSTS[0].title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed text-lg">
+                  {BLOG_POSTS[0].description}
+                </p>
+              </div>
+            </Link>
+
+            {/* Side Posts List */}
+            <div className="lg:col-span-5 flex flex-col gap-6">
+              {BLOG_POSTS.slice(1).map((post) => (
+                <Link to="/events" key={post.id} className="group flex bg-white border border-gray-100 rounded-3xl overflow-hidden hover:shadow-lg transition-shadow items-stretch h-36">
+                  <div className="w-1/3 shrink-0 relative overflow-hidden">
+                    <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  </div>
+                  <div className="w-2/3 p-5 flex flex-col justify-center">
+                    <span className="text-[var(--color-pdp-green)] font-bold text-xs tracking-wider uppercase mb-2 block">{post.category}</span>
+                    <h4 className="font-display font-bold text-gray-900 leading-tight mb-2 group-hover:text-[var(--color-pdp-red)] transition-colors line-clamp-2">
+                      {post.title}
+                    </h4>
+                    <span className="text-gray-500 text-xs">{post.date}</span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+            
+            <Link to="/events" className="md:hidden flex items-center justify-center text-gray-900 font-semibold hover:text-[var(--color-pdp-green)] transition-colors mt-4">
+              View All Posts <ArrowRight className="ml-2 w-5 h-5 -rotate-45" />
+            </Link>
           </div>
         </div>
       </section>
