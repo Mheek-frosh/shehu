@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Activity, BookOpen, Users, Map, X } from 'lucide-react';
+import { ArrowRight, Activity, Award, BookOpen, Handshake, Heart, Leaf, Lightbulb, Map, Play, ShieldCheck, Users, X } from 'lucide-react';
 import { PROJECTS, BLOG_POSTS } from '../data/mockData';
 
 export default function Home() {
@@ -168,6 +168,86 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-3xl mx-auto text-center mb-14">
+            <span className="text-[var(--color-pdp-green)] font-bold tracking-[0.2em] text-xs uppercase mb-4 block">Why Shehu ABG</span>
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-5">Why Shehu ABG Is the Right Choice</h2>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Shehu ABG brings practical experience, a listening ear, and a record of showing up for communities. Every commitment is rooted in service, accountability, and a clear plan for Kaduna&apos;s future.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+            {[
+              { title: 'People First', description: 'Policies and projects shaped around the everyday needs of citizens.', icon: Users, color: 'text-[var(--color-pdp-green)]', bg: 'bg-emerald-50' },
+              { title: 'Proven Service', description: 'A grounded approach built through years of public and community service.', icon: Award, color: 'text-[var(--color-pdp-red)]', bg: 'bg-red-50' },
+              { title: 'Clear Direction', description: 'A focused agenda that turns shared hopes into measurable progress.', icon: Lightbulb, color: 'text-blue-600', bg: 'bg-blue-50' },
+            ].map((reason) => (
+              <div key={reason.title} className="p-7 rounded-2xl border border-gray-100 bg-white shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all">
+                <div className={`w-12 h-12 rounded-xl ${reason.bg} ${reason.color} flex items-center justify-center mb-6`}>
+                  <reason.icon size={24} strokeWidth={1.8} />
+                </div>
+                <h3 className="text-xl font-display font-bold text-gray-900 mb-3">{reason.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{reason.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-[#f6f8f4] border-y border-gray-100">
+        <div className="container mx-auto px-6">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-start max-w-6xl mx-auto">
+            <div className="lg:col-span-5 space-y-6">
+              <div className="relative min-h-[390px] rounded-[2rem] overflow-hidden group shadow-xl">
+                <img src="/src/assets/hero-poster.png" alt="Shehu ABG campaign community impact" className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm text-[var(--color-pdp-green)] px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider">The standard we set</div>
+                <div className="absolute bottom-7 left-7 right-7 text-white">
+                  <p className="text-green-200 text-sm font-semibold uppercase tracking-wider mb-3">Values in action</p>
+                  <h3 className="text-3xl font-display font-bold leading-tight">Progress that reaches every community.</h3>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-[1fr_1.25fr] min-h-36 rounded-3xl overflow-hidden bg-[var(--color-pdp-green-dark)] text-white">
+                <img src="/src/assets/hero-poster.png" alt="Shehu ABG campaign community" className="w-full h-full object-cover object-bottom" />
+                <div className="p-5 flex flex-col justify-center">
+                  <p className="text-green-200 text-xs font-bold uppercase tracking-wider mb-2">Built together</p>
+                  <p className="font-display text-lg font-semibold leading-snug">Listening, learning, and moving forward as one.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="lg:col-span-7 pt-2">
+              <span className="text-[var(--color-pdp-green)] font-bold tracking-[0.2em] text-xs uppercase mb-4 block">Our Culture</span>
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 leading-tight mb-5">Our Core Values</h2>
+              <p className="text-gray-600 text-lg leading-relaxed max-w-xl mb-10">
+                These principles shape how we serve, how we partner with communities, and how we measure the progress we promise.
+              </p>
+
+              <div className="grid sm:grid-cols-2 gap-x-8 gap-y-3">
+                {[
+                  { title: 'Professionalism', icon: Award, color: 'text-emerald-600', bg: 'bg-emerald-50' },
+                  { title: 'Accountability', icon: ShieldCheck, color: 'text-orange-500', bg: 'bg-orange-50' },
+                  { title: 'Innovation', icon: Lightbulb, color: 'text-blue-600', bg: 'bg-blue-50' },
+                  { title: 'Sustainability', icon: Leaf, color: 'text-indigo-600', bg: 'bg-indigo-50' },
+                  { title: 'Collaboration', icon: Handshake, color: 'text-violet-600', bg: 'bg-violet-50' },
+                  { title: 'Integrity', icon: Heart, color: 'text-pink-600', bg: 'bg-pink-50' },
+                ].map((value) => (
+                  <div key={value.title} className="flex items-center gap-4 py-5 border-b border-gray-200 group">
+                    <div className={`w-11 h-11 shrink-0 rounded-xl ${value.bg} ${value.color} flex items-center justify-center group-hover:scale-105 transition-transform`}>
+                      <value.icon size={22} strokeWidth={1.8} />
+                    </div>
+                    <h3 className="text-lg font-display font-bold text-gray-900">{value.title}</h3>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Blog Section */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
@@ -225,6 +305,38 @@ export default function Home() {
               View All Posts <ArrowRight className="ml-2 w-5 h-5 -rotate-45" />
             </Link>
           </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-12">
+            <span className="text-[var(--color-pdp-green)] font-bold tracking-[0.2em] text-xs uppercase mb-4 block">Our Story</span>
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900">Watch Our Story in Action</h2>
+          </div>
+
+          <div className="relative max-w-5xl mx-auto aspect-[16/8] min-h-72 rounded-[2rem] overflow-hidden shadow-2xl group">
+            <img src="/src/assets/hero-poster.png" alt="Shehu ABG campaign story" className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-950/75 via-gray-950/40 to-gray-950/20" />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <Link to="/about" aria-label="Watch the Shehu ABG story" className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[var(--color-pdp-green)] text-white flex items-center justify-center shadow-xl shadow-black/20 hover:scale-110 transition-transform">
+                <Play size={28} fill="currentColor" className="ml-1" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-[var(--color-pdp-green)] text-white">
+        <div className="container mx-auto px-6 text-center">
+          <span className="text-green-100 font-bold tracking-[0.2em] text-xs uppercase mb-4 block">Join the Impact</span>
+          <h2 className="text-3xl md:text-5xl font-display font-bold mb-5">Stay Connected with the Impact</h2>
+          <p className="text-green-50 text-lg max-w-2xl mx-auto leading-relaxed mb-8">
+            Join the Shehu ABG Impact Group community and be the first to hear about our latest initiatives and civic programs.
+          </p>
+          <Link to="/contact" className="inline-flex items-center bg-white text-[var(--color-pdp-green)] px-8 py-3.5 rounded-full font-semibold hover:bg-green-50 hover:scale-105 transition-all shadow-lg">
+            Get Involved <ArrowRight className="ml-2 w-4 h-4" />
+          </Link>
         </div>
       </section>
 
