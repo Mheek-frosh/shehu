@@ -47,7 +47,7 @@ export default function Home() {
           >
             <div className="aspect-[4/5] rounded-3xl overflow-hidden glass border-white/10 relative shadow-2xl">
               <img
-                src="/src/assets/hero-poster.png"
+                src="/assets/hero-poster.png"
                 alt="Rt. Hon. Usman S Bawa ABG"
                 className="w-full h-full object-cover object-top"
               />
@@ -201,7 +201,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-start max-w-6xl mx-auto">
             <div className="lg:col-span-5 space-y-6">
               <div className="relative min-h-[390px] rounded-[2rem] overflow-hidden group shadow-xl">
-                <img src="/src/assets/hero-poster.png" alt="Shehu ABG campaign community impact" className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+                <img src="/assets/hero-poster.png" alt="Shehu ABG campaign community impact" className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm text-[var(--color-pdp-green)] px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider">The standard we set</div>
                 <div className="absolute bottom-7 left-7 right-7 text-white">
@@ -211,7 +211,7 @@ export default function Home() {
               </div>
 
               <div className="grid grid-cols-[1fr_1.25fr] min-h-36 rounded-3xl overflow-hidden bg-[var(--color-pdp-green-dark)] text-white">
-                <img src="/src/assets/hero-poster.png" alt="Shehu ABG campaign community" className="w-full h-full object-cover object-bottom" />
+                <img src="/assets/hero-poster.png" alt="Shehu ABG campaign community" className="w-full h-full object-cover object-bottom" />
                 <div className="p-5 flex flex-col justify-center">
                   <p className="text-green-200 text-xs font-bold uppercase tracking-wider mb-2">Built together</p>
                   <p className="font-display text-lg font-semibold leading-snug">Listening, learning, and moving forward as one.</p>
@@ -316,7 +316,7 @@ export default function Home() {
           </div>
 
           <div className="relative max-w-5xl mx-auto aspect-[16/8] min-h-72 rounded-[2rem] overflow-hidden shadow-2xl group">
-            <img src="/src/assets/hero-poster.png" alt="Shehu ABG campaign story" className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+            <img src="/assets/hero-poster.png" alt="Shehu ABG campaign story" className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
             <div className="absolute inset-0 bg-gradient-to-br from-gray-950/75 via-gray-950/40 to-gray-950/20" />
             <div className="absolute inset-0 flex items-center justify-center">
               <Link to="/about" aria-label="Watch the Shehu ABG story" className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[var(--color-pdp-green)] text-white flex items-center justify-center shadow-xl shadow-black/20 hover:scale-110 transition-transform">

@@ -40,7 +40,7 @@ export default function About() {
 					</div>
 
 					<div className="w-full aspect-[16/9] rounded-[2rem] overflow-hidden mb-12 shadow-md">
-						<img src="/src/assets/hero-poster.png" alt="Shehu ABG campaign vision for Kaduna State" className="w-full h-full object-cover object-top" />
+						<img src="/assets/hero-poster.png" alt="Shehu ABG campaign vision for Kaduna State" className="w-full h-full object-cover object-top" />
 					</div>
 
 					<div className="prose prose-lg max-w-none mb-16">

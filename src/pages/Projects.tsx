@@ -3,7 +3,7 @@ import { ArrowRight, Calendar, CheckCircle2, Clock3, MapPin } from 'lucide-react
 import { Link } from 'react-router-dom';
 import { PROJECTS } from '../data/mockData';
 
-const fallbackImage = '/src/assets/hero-poster.png';
+const fallbackImage = '/assets/hero-poster.png';
 
 export default function Projects() {
 	const [featuredProject, ...supportingProjects] = PROJECTS;

@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <div className="md:col-span-1">
             <div className="flex items-center space-x-3 mb-6">
-              <img src="/src/assets/pdp-logo.png" alt="PDP Logo" className="h-12 w-auto bg-white rounded-full p-1" />
+              <img src="/assets/pdp-logo.png" alt="PDP Logo" className="h-12 w-auto bg-white rounded-full p-1" />
               <h3 className="text-2xl font-display font-bold tracking-tight text-[var(--color-pdp-green)]">SHEHU ABG<br/>IMPACT</h3>
             </div>
             <p className="text-gray-300 text-sm mb-6">
