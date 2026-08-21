@@ -183,7 +183,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             {/* Featured Post */}
-            <Link to="/events" className="lg:col-span-7 group block relative rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-shadow bg-gray-50 border border-gray-100 pb-6 h-full flex flex-col">
+            <Link to={`/blog/${BLOG_POSTS[0].slug}`} className="lg:col-span-7 group block relative rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-shadow bg-gray-50 border border-gray-100 pb-6 h-full flex flex-col">
               <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] lg:aspect-[4/3] xl:aspect-[16/9] mb-6 overflow-hidden rounded-[2rem]">
                 <img src={BLOG_POSTS[0].image} alt={BLOG_POSTS[0].title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute top-6 left-6 bg-orange-400 text-gray-900 font-semibold px-4 py-1.5 rounded-full text-sm shadow-md">
@@ -206,7 +206,7 @@ export default function Home() {
             {/* Side Posts List */}
             <div className="lg:col-span-5 flex flex-col gap-6">
               {BLOG_POSTS.slice(1).map((post) => (
-                <Link to="/events" key={post.id} className="group flex bg-white border border-gray-100 rounded-3xl overflow-hidden hover:shadow-lg transition-shadow items-stretch h-36">
+                <Link to={`/blog/${post.slug}`} key={post.id} className="group flex bg-white border border-gray-100 rounded-3xl overflow-hidden hover:shadow-lg transition-shadow items-stretch h-36">
                   <div className="w-1/3 shrink-0 relative overflow-hidden">
                     <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   </div>

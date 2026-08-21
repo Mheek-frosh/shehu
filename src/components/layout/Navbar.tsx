@@ -34,22 +34,26 @@ export default function Navbar() {
         </Link>
         
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center space-x-6">
-          {NAV_LINKS.slice(0, 6).map((link) => (
+        <nav className="hidden lg:flex items-center space-x-8">
+          {[
+            { name: 'Home', path: '/' },
+            { name: 'About', path: '/about' },
+            { name: 'Impact Projects', path: '/projects' },
+            { name: 'Blog', path: '/events' }
+          ].map((link) => (
             <Link 
               key={link.path} 
               to={link.path}
-              className={`text-sm font-medium transition-colors hover:text-[var(--color-pdp-red)] ${
+              className={`text-sm font-semibold uppercase tracking-wider transition-colors hover:text-[var(--color-pdp-red)] ${
                 location.pathname === link.path ? 'text-[var(--color-pdp-red)]' : 'text-current'
               }`}
             >
               {link.name}
             </Link>
           ))}
-          {/* A dropdown or more menu could be added here for the rest, but for now we'll just show a few and a menu button */}
-          <button onClick={() => setIsOpen(true)} className="p-2">
-            <Menu size={24} />
-          </button>
+          <Link to="/contact" className="bg-[var(--color-pdp-green)] text-white px-6 py-2 rounded-full font-medium hover:bg-green-800 transition-colors shadow-md shadow-[var(--color-pdp-green)]/20">
+            Join Us
+          </Link>
         </nav>
 
         {/* Mobile Toggle */}

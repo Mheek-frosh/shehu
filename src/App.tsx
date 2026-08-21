@@ -10,6 +10,7 @@ import Projects from './pages/Projects';
 import ImpactGallery from './pages/ImpactGallery';
 import PlannedProjects from './pages/PlannedProjects';
 import Events from './pages/Events';
+import BlogDetail from './pages/BlogDetail';
 import PVCEducation from './pages/PVCEducation';
 import VoterEducation from './pages/VoterEducation';
 import Entrepreneurship from './pages/Entrepreneurship';
@@ -31,6 +32,7 @@ function App() {
             <Route path="/gallery" element={<ImpactGallery />} />
             <Route path="/planned-projects" element={<PlannedProjects />} />
             <Route path="/events" element={<Events />} />
+            <Route path="/blog/:slug" element={<BlogDetail />} />
             <Route path="/pvc-education" element={<PVCEducation />} />
             <Route path="/voter-education" element={<VoterEducation />} />
             <Route path="/entrepreneurship" element={<Entrepreneurship />} />
