@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowLeft, ArrowRight, Calendar, Heart, MapPin, ShieldCheck, Users } from 'lucide-react';
+import { ArrowRight, Calendar, Heart, MapPin, ShieldCheck, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const focusAreas = [
@@ -23,23 +23,17 @@ const focusAreas = [
 export default function About() {
 	return (
 		<div className="bg-white min-h-screen">
-			<div className="container mx-auto px-6 pt-8 pb-4 max-w-5xl">
-				<Link to="/" className="inline-flex items-center text-gray-500 hover:text-[var(--color-pdp-green)] transition-colors font-medium text-sm">
-					<ArrowLeft className="w-4 h-4 mr-2" /> Back to Home
-				</Link>
-			</div>
-
 			<article className="container mx-auto px-6 max-w-4xl">
 				<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-					<div className="mb-6">
+					<div className="mb-6 flex justify-center">
 						<span className="inline-block px-4 py-1.5 rounded-full text-sm font-bold uppercase tracking-wider bg-green-100 text-green-700">Our Story</span>
 					</div>
 
-					<h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-gray-900 leading-tight mb-8">
+					<h1 className="text-center text-4xl md:text-5xl lg:text-6xl font-display font-bold text-gray-900 leading-tight mb-8">
 						Leadership rooted in service, built for lasting impact.
 					</h1>
 
-					<div className="flex flex-wrap items-center gap-6 text-gray-500 text-sm pb-8 border-b border-gray-100 mb-10">
+					<div className="flex flex-wrap justify-center items-center gap-6 text-gray-500 text-sm pb-8 border-b border-gray-100 mb-10">
 						<span className="flex items-center gap-2"><div className="w-7 h-7 rounded-full bg-[var(--color-pdp-green)]/10 flex items-center justify-center"><Users className="w-4 h-4 text-[var(--color-pdp-green)]" /></div>Shehu ABG Impact Group</span>
 						<span className="flex items-center gap-2"><Calendar className="w-4 h-4" /> Established 2024</span>
 						<span className="flex items-center gap-2"><MapPin className="w-4 h-4" /> Kaduna State</span>
