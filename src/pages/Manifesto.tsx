@@ -1,0 +1,1 @@
+export default function Manifesto() { return (<div className="min-h-screen pt-32 px-6 container mx-auto"><h1 className="text-4xl font-display font-bold">Manifesto</h1><p className="mt-4 text-lg text-gray-600">Content for Manifesto will go here.</p></div>); }

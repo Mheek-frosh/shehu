@@ -1,0 +1,1 @@
+export default function PVCEducation() { return (<div className="min-h-screen pt-32 px-6 container mx-auto"><h1 className="text-4xl font-display font-bold">PVCEducation</h1><p className="mt-4 text-lg text-gray-600">Content for PVCEducation will go here.</p></div>); }

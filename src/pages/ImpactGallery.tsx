@@ -1,0 +1,1 @@
+export default function ImpactGallery() { return (<div className="min-h-screen pt-32 px-6 container mx-auto"><h1 className="text-4xl font-display font-bold">ImpactGallery</h1><p className="mt-4 text-lg text-gray-600">Content for ImpactGallery will go here.</p></div>); }

@@ -1,0 +1,1 @@
+export default function Entrepreneurship() { return (<div className="min-h-screen pt-32 px-6 container mx-auto"><h1 className="text-4xl font-display font-bold">Entrepreneurship</h1><p className="mt-4 text-lg text-gray-600">Content for Entrepreneurship will go here.</p></div>); }

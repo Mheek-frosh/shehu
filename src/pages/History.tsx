@@ -1,0 +1,1 @@
+export default function History() { return (<div className="min-h-screen pt-32 px-6 container mx-auto"><h1 className="text-4xl font-display font-bold">History</h1><p className="mt-4 text-lg text-gray-600">Content for History will go here.</p></div>); }
