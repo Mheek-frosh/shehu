@@ -315,7 +315,7 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900">Watch Our Story in Action</h2>
           </div>
 
-          <div className="relative max-w-5xl mx-auto aspect-[16/8] min-h-72 rounded-[2rem] overflow-hidden shadow-2xl group">
+          <div className="relative max-w-5xl mx-auto aspect-[4/3] sm:aspect-[16/8] min-h-0 sm:min-h-72 rounded-[2rem] overflow-hidden shadow-2xl group">
             <img src="/assets/hero-poster.png" alt="Shehu ABG campaign story" className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
             <div className="absolute inset-0 bg-gradient-to-br from-gray-950/75 via-gray-950/40 to-gray-950/20" />
             <div className="absolute inset-0 flex items-center justify-center">

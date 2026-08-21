@@ -26,7 +26,7 @@ export default function Projects() {
 						transition={{ duration: 0.5 }}
 						className="grid lg:grid-cols-12 bg-gray-50 border border-gray-100 rounded-[2rem] overflow-hidden shadow-sm"
 					>
-						<div className="lg:col-span-7 aspect-[4/3] lg:aspect-auto min-h-[360px] relative overflow-hidden group">
+						<div className="lg:col-span-7 aspect-[4/3] lg:aspect-auto min-h-0 lg:min-h-[360px] relative overflow-hidden group">
 							<img
 								src={featuredProject.image}
 								onError={(event) => { event.currentTarget.src = fallbackImage; }}

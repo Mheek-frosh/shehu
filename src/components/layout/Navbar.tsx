@@ -24,13 +24,13 @@ export default function Navbar() {
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'glass py-3' : 'bg-transparent py-5'
+        scrolled ? 'glass py-2.5 sm:py-3' : 'bg-transparent py-3 sm:py-5'
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <Link to="/" className="z-50 flex items-center space-x-3">
-          <img src="/assets/pdp-logo.png" alt="PDP Logo" className="h-10 w-auto" />
-          <span className="text-xl font-display font-bold tracking-tight text-[var(--color-pdp-green)]">Shehu ABG Impact</span>
+          <img src="/assets/pdp-logo.png" alt="PDP Logo" className="h-9 sm:h-10 w-auto" />
+          <span className="text-base sm:text-xl font-display font-bold tracking-tight text-[var(--color-pdp-green)] whitespace-nowrap">Shehu ABG Impact</span>
         </Link>
         
         {/* Desktop Nav */}
@@ -61,6 +61,8 @@ export default function Navbar() {
           className="lg:hidden z-50 p-2"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle Menu"
+          aria-expanded={isOpen}
+          aria-controls="mobile-navigation"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -74,15 +76,16 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-[var(--background)] pt-24 px-6 overflow-y-auto pb-10"
+            id="mobile-navigation"
+            className="fixed inset-0 z-40 bg-[var(--background)] pt-20 sm:pt-24 px-5 sm:px-6 overflow-y-auto pb-10"
           >
-            <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="flex flex-col space-y-4">
-                {NAV_LINKS.map((link) => (
+            <div className="container mx-auto max-w-lg">
+              <div className="flex flex-col space-y-1">
+                {NAV_LINKS.filter((link) => ['Home', 'About', 'Projects', 'Impact Gallery', 'Events', 'Contact'].includes(link.name)).map((link) => (
                   <Link 
                     key={link.path} 
                     to={link.path}
-                    className="text-2xl font-display font-medium hover:text-[var(--color-pdp-red)] transition-colors"
+                    className="border-b border-gray-100 py-4 text-xl sm:text-2xl font-display font-medium hover:text-[var(--color-pdp-red)] transition-colors"
                   >
                     {link.name}
                   </Link>
