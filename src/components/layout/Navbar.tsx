@@ -29,8 +29,8 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <Link to="/" className="z-50 flex items-center space-x-3">
-          <img src="/assets/pdp-logo.png" alt="PDP Logo" className="h-9 sm:h-10 w-auto" />
-          <span className="text-base sm:text-xl font-display font-bold tracking-tight text-[var(--color-pdp-green)] whitespace-nowrap">Shehu ABG Impact</span>
+          <img src="/shehu-abg-logo.png" alt="Shehu ABG Impact Initiative logo" className="h-10 sm:h-11 w-auto" />
+          <span className="text-base sm:text-xl font-display font-bold tracking-tight text-[var(--color-pdp-green)] whitespace-nowrap">Shehu ABG Impact Initiative</span>
         </Link>
         
         {/* Desktop Nav */}
