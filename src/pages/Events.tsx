@@ -157,6 +157,19 @@ export default function Events() {
           </>
         )}
       </div>
+
+      {/* CTA Banner */}
+      <section className="py-20 bg-[var(--color-pdp-green)]">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">Be part of the next chapter.</h2>
+          <p className="text-green-100 text-lg mb-8 max-w-xl mx-auto">
+            Join the Impact Group and help move ideas from community conversations into lasting action.
+          </p>
+          <Link to="/contact" className="inline-block bg-white text-[var(--color-pdp-green)] font-bold px-8 py-3 rounded-full hover:bg-green-50 transition-colors shadow-lg">
+            Get Involved
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }
