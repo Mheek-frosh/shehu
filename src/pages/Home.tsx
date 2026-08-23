@@ -57,7 +57,7 @@ export default function Home() {
       </section>
 
       {/* Quick Links Section - Infinite Marquee */}
-      <section className="py-24 bg-white overflow-hidden">
+      <section className="py-8 bg-white overflow-hidden">
         <div className="flex w-fit animate-marquee hover:[animation-play-state:paused]">
           {/* Duplicate the items for seamless infinite scroll */}
           {[...Array(2)].map((_, arrayIndex) => (
