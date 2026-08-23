@@ -44,13 +44,28 @@ export default function About() {
 					</div>
 
 					<div className="prose prose-lg max-w-none mb-16">
-						<p className="text-xl text-gray-600 leading-relaxed font-medium border-l-4 border-[var(--color-pdp-green)] pl-6 mb-8 italic">
-							The Shehu ABG Impact Group exists to turn a shared hope for Kaduna into practical action: stronger communities, wider opportunity, and leadership that remains accountable to the people it serves.
-						</p>
-						<p className="text-gray-700 leading-relaxed text-lg mb-6">Shehu ABG is a community-focused platform built around a simple belief: meaningful change begins with people. From civic education and youth development to agricultural support and community outreach, our work is shaped by the needs we hear directly from citizens.</p>
-						<p className="text-gray-700 leading-relaxed text-lg mb-6">We bring together volunteers, local leaders, professionals, educators, and families who want to contribute to a more capable and inclusive Kaduna. The Impact Group gives that shared energy a clear direction, connecting ideas to programmes and programmes to measurable outcomes.</p>
-						<p className="text-gray-700 leading-relaxed text-lg mb-6">Our approach is practical and collaborative. We invest in people, support local solutions, and make room for honest feedback. Whether the work is helping a young person gain a digital skill, supporting a farmer with better tools, or helping a first-time voter understand their civic rights, every step matters.</p>
-						<p className="text-gray-700 leading-relaxed text-lg">This is more than a campaign promise. It is an ongoing commitment to show up, listen carefully, and keep building with the communities at the heart of our story.</p>
+						<h2 className="text-3xl font-display font-bold text-gray-900 mb-6">About Us</h2>
+						<p className="text-gray-700 leading-relaxed text-lg mb-6">Shehu ABG Impact Support Group is a nonprofit, community-focused organisation established to document, showcase and promote public awareness of the developmental contributions and social-impact initiatives associated with Rt. Hon. Usman S. Bawa (ABG).</p>
+						<p className="text-gray-700 leading-relaxed text-lg mb-6">The Group provides a platform for citizens, stakeholders and members of the public to learn about his record of public service, community interventions and contributions to human development across Kaduna State.</p>
+						<p className="text-gray-700 leading-relaxed text-lg mb-6">Our work is centred on impact, service, inclusion and accountability. We seek to bring together credible information about initiatives connected to education, digital inclusion, youth development, healthcare, access to basic amenities, economic empowerment and community development.</p>
+						<p className="text-gray-700 leading-relaxed text-lg mb-6">Through research, documentation, storytelling and public engagement, the Group aims to preserve a clear record of interventions and their beneficiaries, while providing an accessible resource for anyone interested in understanding Hon. Usman S. Bawa’s contribution to Kaduna’s development.</p>
+						<p className="text-gray-700 leading-relaxed text-lg mb-6">We believe that public service should be measured not only by positions held, but by the lives touched, opportunities created and communities strengthened.</p>
+						<p className="text-xl text-gray-600 leading-relaxed font-medium border-l-4 border-[var(--color-pdp-green)] pl-6 mb-8 italic">Shehu ABG Impact Support Group — Documenting Impact. Celebrating Service. Preserving the Record.</p>
+
+						<h2 className="text-3xl font-display font-bold text-gray-900 mb-6 mt-12">Vision</h2>
+						<p className="text-gray-700 leading-relaxed text-lg mb-6">To become a credible and trusted platform for documenting public service, community impact and development initiatives associated with Hon. Usman S. Bawa, while promoting greater public awareness of the importance of accountable and people-centred leadership in Kaduna State.</p>
+
+						<h2 className="text-3xl font-display font-bold text-gray-900 mb-6 mt-12">Mission</h2>
+						<p className="text-gray-700 leading-relaxed text-lg mb-6">Our mission is to research, document, verify and communicate the impact of Hon. Usman S. Bawa’s public service and community interventions across Kaduna State.</p>
+						<p className="text-gray-700 leading-relaxed text-lg mb-4">We seek to:</p>
+						<ul className="list-disc pl-6 text-gray-700 leading-relaxed text-lg space-y-2 mb-6">
+							<li>Document development initiatives and their outcomes.</li>
+							<li>Preserve stories and experiences of beneficiaries and communities.</li>
+							<li>Promote access to reliable information about public service and community development.</li>
+							<li>Highlight initiatives relating to education, healthcare, digital inclusion, youth development, economic empowerment and grassroots interventions.</li>
+							<li>Encourage constructive civic engagement and informed public discussion.</li>
+							<li>Build an accessible digital archive of documented impact for present and future generations.</li>
+						</ul>
 					</div>
 				</motion.div>
 			</article>
