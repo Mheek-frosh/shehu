@@ -12,6 +12,11 @@ const categoryColors: Record<string, string> = {
   'Civic Action': 'bg-red-100 text-red-700',
 };
 
+/**
+ * BlogDetail Page Component
+ * Renders an individual blog post based on the route slug parameter.
+ * Also displays related posts from the same category.
+ */
 export default function BlogDetail() {
   const { slug } = useParams<{ slug: string }>();
   const post = BLOG_POSTS.find(p => p.slug === slug);

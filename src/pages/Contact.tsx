@@ -2,6 +2,11 @@ import { motion } from 'framer-motion';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+/**
+ * Contact Page Component
+ * Displays the contact information and an interactive Google Map.
+ * Used for visitors to get in touch with the organization.
+ */
 export default function Contact() {
   return (
     <div className="bg-white min-h-screen">
