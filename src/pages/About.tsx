@@ -20,6 +20,11 @@ const focusAreas = [
 	},
 ];
 
+/**
+ * About Page Component
+ * Displays the organization's story, mission, vision, and core focus areas.
+ * Uses Framer Motion for scroll animations.
+ */
 export default function About() {
 	return (
 		<div className="bg-white min-h-screen">

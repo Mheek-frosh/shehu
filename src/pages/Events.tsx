@@ -15,6 +15,11 @@ const categoryColors: Record<string, string> = {
   'Civic Action': 'bg-red-100 text-red-700',
 };
 
+/**
+ * Events Page Component
+ * Renders the blog and latest news section.
+ * Includes search functionality, category filtering, and a featured post layout.
+ */
 export default function Events() {
   const [search, setSearch] = useState('');
   const [activeCategory, setActiveCategory] = useState('All');
