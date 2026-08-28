@@ -23,9 +23,8 @@ export const PROJECTS = [
     date: 'Impact Archive',
     status: 'Completed',
     description: 'Providing direct mobility support to beneficiaries so they can pursue livelihoods, strengthen their independence, and create wider value within their communities.',
-    image: '/car1.jpeg',
-    gallery: ['/car2.jpeg', '/car3.jpeg', '/car4.jpeg'],
-    imageDisplay: 'portrait',
+    image: '/im1.jpeg',
+    gallery: ['/im2.jpeg', '/im3.jpeg', '/im4.jpeg', '/car2.jpeg', '/car3.jpeg', '/car4.jpeg'],
     story: 'These beneficiary moments reflect ABG’s practical, people-centred approach to empowerment. Each presentation was designed to place a useful resource directly into the hands of an individual, creating a foundation for greater mobility, productivity, and economic participation.',
     highlights: ['Direct beneficiary support', 'Mobility for livelihoods', 'Community-centred delivery'],
     blogPath: '/blog/throwback-abg-empowerment-beneficiaries'
