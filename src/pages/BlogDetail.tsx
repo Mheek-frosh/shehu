@@ -4,6 +4,7 @@ import { ArrowLeft, Calendar, Clock, User, Tag, ArrowRight } from 'lucide-react'
 import { BLOG_POSTS } from '../data/mockData';
 
 const categoryColors: Record<string, string> = {
+  Empowerment: 'bg-emerald-100 text-emerald-800',
   'Campaign Update': 'bg-green-100 text-green-800',
   Innovation: 'bg-orange-100 text-orange-700',
   Education: 'bg-blue-100 text-blue-700',
@@ -31,6 +32,7 @@ export default function BlogDetail() {
   const paragraphs = (post.body ?? post.description ?? '').split('\n\n').filter(Boolean);
   const gallery = 'gallery' in post && Array.isArray(post.gallery) ? post.gallery : [];
   const authorRole = 'authorRole' in post ? post.authorRole : undefined;
+  const usesPortraitImages = 'imageDisplay' in post && post.imageDisplay === 'portrait';
 
   return (
     <div className="bg-white min-h-screen">
@@ -86,11 +88,14 @@ export default function BlogDetail() {
           </div>
 
           {/* Hero Image */}
-          <div className="w-full aspect-[16/9] rounded-[2rem] overflow-hidden mb-12 shadow-md">
+          <div className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden mb-12 shadow-md bg-gray-100">
+            {usesPortraitImages && (
+              <img src={post.image} alt="" aria-hidden="true" className="absolute w-full h-full object-cover scale-110 blur-2xl opacity-40" />
+            )}
             <img
               src={post.image}
               alt={post.title}
-              className="w-full h-full object-cover"
+              className={`relative w-full h-full ${usesPortraitImages ? 'object-contain' : 'object-cover'}`}
             />
           </div>
 
@@ -109,10 +114,11 @@ export default function BlogDetail() {
           </div>
 
           {gallery.length > 0 && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-14" aria-label="Article photo gallery">
+            <div className={`grid grid-cols-1 gap-5 mb-14 ${usesPortraitImages ? 'sm:grid-cols-2 lg:grid-cols-3' : 'md:grid-cols-2'}`} aria-label="Article photo gallery">
               {gallery.map((image, index) => (
-                <figure key={image} className={`overflow-hidden rounded-2xl bg-gray-100 ${index === 0 ? 'md:col-span-2' : ''}`}>
-                  <img src={image} alt={`Shehu ABG stakeholder engagement ${index + 2}`} className={`w-full object-cover ${index === 0 ? 'aspect-[3/2] md:aspect-[16/9]' : 'aspect-[3/2]'}`} loading="lazy" />
+                <figure key={image} className={`relative overflow-hidden rounded-2xl bg-gray-100 ${!usesPortraitImages && index === 0 ? 'md:col-span-2' : ''}`}>
+                  {usesPortraitImages && <img src={image} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover scale-110 blur-xl opacity-35" />}
+                  <img src={image} alt={`Article photograph ${index + 2}`} className={`relative w-full ${usesPortraitImages ? 'aspect-[3/4] object-contain' : `object-cover ${index === 0 ? 'aspect-[3/2] md:aspect-[16/9]' : 'aspect-[3/2]'}`}`} loading="lazy" />
                 </figure>
               ))}
             </div>
@@ -170,7 +176,10 @@ export default function BlogDetail() {
                 >
                   <Link to={`/blog/${rp.slug}`} className="group flex flex-col rounded-3xl overflow-hidden bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-shadow h-full">
                     <div className="relative overflow-hidden aspect-video">
-                      <img src={rp.image} alt={rp.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                      {'imageDisplay' in rp && rp.imageDisplay === 'portrait' && (
+                        <img src={rp.image} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover scale-110 blur-xl opacity-40" />
+                      )}
+                      <img src={rp.image} alt={rp.title} className={`relative w-full h-full group-hover:scale-105 transition-transform duration-700 ${'imageDisplay' in rp && rp.imageDisplay === 'portrait' ? 'object-contain' : 'object-cover'}`} />
                       {rp.category && (
                         <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold ${categoryColors[rp.category] ?? 'bg-gray-100 text-gray-700'}`}>
                           {rp.category}

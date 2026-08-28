@@ -49,6 +49,31 @@ export const PROJECTS = [
 
 export const BLOG_POSTS = [
   {
+    id: 9,
+    slug: 'throwback-abg-empowerment-beneficiaries',
+    title: 'Throwback: Celebrating Beneficiaries of ABG Empowerment',
+    category: 'Empowerment',
+    author: 'Shehu ABG Impact Team',
+    date: 'August 28, 2026',
+    readTime: '2 min read',
+    description: 'A look back at some of the people reached through ABG empowerment support—and the hope that continues to inspire the work ahead.',
+    image: '/car1.jpeg',
+    gallery: ['/car2.jpeg', '/car3.jpeg', '/car4.jpeg'],
+    imageDisplay: 'portrait',
+    body: `These throwback pictures capture some of the beneficiaries of ABG empowerment initiatives and the moments when practical support was placed directly into the hands of members of the community.
+
+The empowerment effort reflects a belief that people thrive when they are given opportunities and resources that can help them become more productive, independent, and confident about the future. Support such as mobility assistance can open new possibilities for work, enterprise, and improved livelihoods.
+
+Beyond every presentation is a personal story, a family, and a wider community that can benefit when one person is empowered. These moments remain a reminder that meaningful impact begins by listening to people and responding to their real needs.
+
+Looking back, we are grateful for the lives reached, the trust shared, and the progress made together. Every beneficiary represents a reason to keep building initiatives that create dignity, opportunity, and lasting value.
+
+As we look ahead, we do so with hope and a renewed commitment to expanding empowerment opportunities across Kaduna State. The journey continues, and the goal remains clear: to help more people turn opportunity into sustainable progress.
+
+Looking back with gratitude and looking ahead with hope.`,
+    tags: ['ABGEmpowerment', 'CommunityImpact', 'Beneficiaries', 'Kaduna']
+  },
+  {
     id: 8,
     slug: 'shehu-abg-pays-condolence-visits-in-kaduna',
     title: 'Shehu ABG Pays Condolence Visits in Kaduna',

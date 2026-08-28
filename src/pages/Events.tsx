@@ -7,6 +7,7 @@ import { BLOG_POSTS } from '../data/mockData';
 const ALL_CATEGORIES = ['All', ...Array.from(new Set(BLOG_POSTS.map(p => p.category).filter(Boolean)))];
 
 const categoryColors: Record<string, string> = {
+  Empowerment: 'bg-emerald-100 text-emerald-800',
   'Campaign Update': 'bg-green-100 text-green-800',
   Innovation: 'bg-orange-100 text-orange-700',
   Education: 'bg-blue-100 text-blue-700',
@@ -105,10 +106,13 @@ export default function Events() {
                   >
                     <Link to={`/blog/${post.slug}`} className="group flex flex-col h-full">
                       <div className="relative overflow-hidden aspect-[16/9] rounded-3xl shadow-sm">
+                        {'imageDisplay' in post && post.imageDisplay === 'portrait' && (
+                          <img src={post.image} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover scale-110 blur-xl opacity-40" />
+                        )}
                         <img
                           src={post.image}
                           alt={post.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                          className={`relative w-full h-full group-hover:scale-105 transition-transform duration-700 ${'imageDisplay' in post && post.imageDisplay === 'portrait' ? 'object-contain' : 'object-cover'}`}
                         />
                         {post.category && (
                           <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold ${categoryColors[post.category] ?? 'bg-gray-100 text-gray-700'}`}>
