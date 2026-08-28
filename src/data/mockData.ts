@@ -49,6 +49,29 @@ export const PROJECTS = [
 
 export const BLOG_POSTS = [
   {
+    id: 8,
+    slug: 'shehu-abg-pays-condolence-visits-in-kaduna',
+    title: 'Shehu ABG Pays Condolence Visits in Kaduna',
+    category: 'Condolence Visit',
+    author: 'Ibrahim A. Malali',
+    authorRole: 'DG, Media & Publicity',
+    date: 'August 28, 2026',
+    readTime: '2 min read',
+    description: 'Shehu ABG visited bereaved PDP leaders and families in Zaria and Kaduna North to offer his condolences, prayers, and continued support.',
+    image: '/c1.jpeg',
+    gallery: ['/c2.jpeg', '/c3.jpeg', '/c4.jpeg'],
+    body: `Rt. Hon. Shehu Usman Bawa (ABG), PDP Gubernatorial Candidate Kaduna 2027, paid condolence visits to:
+
+1. Alh. Musa Danbaba Saya — PDP Zone 1 Chairman, Zaria, over the loss of his son Habeeb.
+
+2. The family of Hon. Aminu Ayuba MC in Kawo, Kaduna North, who passed away on Thursday.
+
+He prayed that Allah forgive them, grant them Aljannah Firdaus, and give the families strength to bear the loss. Amin 🤲
+
+He assured them of his continued support and solidarity.`,
+    tags: ['ABG2027', 'ShehuABG', 'PDP', 'Kaduna']
+  },
+  {
     id: 7,
     slug: 'shehu-abg-engages-stakeholders-ahead-of-campaign-take-off',
     title: 'Shehu ABG Engages Stakeholders Ahead of Campaign Take-Off',

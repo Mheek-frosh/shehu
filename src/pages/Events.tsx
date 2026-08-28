@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Search, ArrowRight, Clock, Calendar, ChevronLeft, ChevronRight } from 'lucide-react';
@@ -7,6 +7,7 @@ import { BLOG_POSTS } from '../data/mockData';
 const ALL_CATEGORIES = ['All', ...Array.from(new Set(BLOG_POSTS.map(p => p.category)))];
 
 const categoryColors: Record<string, string> = {
+  'Condolence Visit': 'bg-slate-100 text-slate-700',
   'Campaign Update': 'bg-green-100 text-green-800',
   Innovation: 'bg-orange-100 text-orange-700',
   Education: 'bg-blue-100 text-blue-700',
@@ -39,10 +40,6 @@ export default function Events() {
   const totalPages = Math.max(1, Math.ceil(filtered.length / postsPerPage));
   const visiblePosts = filtered.slice((page - 1) * postsPerPage, page * postsPerPage);
 
-  useEffect(() => {
-    setPage(1);
-  }, [search, activeCategory]);
-
   const changePage = (nextPage: number) => {
     setPage(Math.min(Math.max(nextPage, 1), totalPages));
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -63,7 +60,10 @@ export default function Events() {
               type="text"
               placeholder="Search blog posts..."
               value={search}
-              onChange={e => setSearch(e.target.value)}
+              onChange={e => {
+                setSearch(e.target.value);
+                setPage(1);
+              }}
               className="w-full pl-12 pr-6 py-4 rounded-xl border border-gray-200 bg-gray-50 shadow-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-pdp-green)] text-gray-800 placeholder-gray-400"
             />
           </div>
@@ -73,7 +73,10 @@ export default function Events() {
             {ALL_CATEGORIES.map(cat => (
               <button
                 key={cat}
-                onClick={() => setActiveCategory(cat)}
+                onClick={() => {
+                  setActiveCategory(cat);
+                  setPage(1);
+                }}
                 className={`px-5 py-2.5 rounded-lg text-sm font-semibold transition-all ${
                   activeCategory === cat
                     ? 'bg-[var(--color-pdp-green)] text-white shadow-md'

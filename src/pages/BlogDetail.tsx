@@ -4,6 +4,7 @@ import { ArrowLeft, Calendar, Clock, User, Tag, ArrowRight } from 'lucide-react'
 import { BLOG_POSTS } from '../data/mockData';
 
 const categoryColors: Record<string, string> = {
+  'Condolence Visit': 'bg-slate-100 text-slate-700',
   'Campaign Update': 'bg-green-100 text-green-800',
   Innovation: 'bg-orange-100 text-orange-700',
   Education: 'bg-blue-100 text-blue-700',
@@ -107,7 +108,7 @@ export default function BlogDetail() {
           </div>
 
           {gallery.length > 0 && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-14" aria-label="Stakeholder engagement photo gallery">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-14" aria-label="Article photo gallery">
               {gallery.map((image, index) => (
                 <figure key={image} className={`overflow-hidden rounded-2xl bg-gray-100 ${index === 0 ? 'md:col-span-2' : ''}`}>
                   <img src={image} alt={`Shehu ABG stakeholder engagement ${index + 2}`} className={`w-full object-cover ${index === 0 ? 'aspect-[3/2] md:aspect-[16/9]' : 'aspect-[3/2]'}`} loading="lazy" />
