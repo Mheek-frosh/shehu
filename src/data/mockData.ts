@@ -49,6 +49,29 @@ export const PROJECTS = [
 
 const BLOG_POSTS_UNORDERED = [
   {
+    id: 10,
+    slug: 'shehu-abg-attends-nephews-wedding-in-kaduna',
+    title: "Shehu ABG Attends Nephew's Wedding in Kaduna",
+    category: 'Community',
+    author: 'Ibrahim A. Malali',
+    authorRole: 'DG, Media and Publicity',
+    date: 'August 28, 2026',
+    readTime: '2 min read',
+    description: 'Shehu ABG joined family members and well-wishers at Sultan Bello Mosque to celebrate the marriage of Abdullahi Shehu Ibrahim and Khadija Dauda Suleiman.',
+    image: '/w1.jpeg',
+    gallery: ['/w2.jpeg', '/w3.jpeg', '/w4.jpeg', '/w5.jpeg'],
+    body: `The Governorship Candidate of the Peoples Democratic Party (PDP) in Kaduna State, Rt. Hon. Shehu Usman Bawa (ABG), attended the wedding ceremony of his nephew, Abdullahi Shehu Ibrahim, and Khadija Dauda Suleiman at the Sultan Bello Mosque in Kaduna.
+
+The ceremony brought together family members, friends, community leaders, and well-wishers who gathered to share in the joy of the newlyweds and their families. Shehu ABG joined the congregation in celebrating the important milestone and extended his warm wishes to the couple.
+
+He prayed for Allah's blessings upon their union and asked that their home be filled with peace, love, understanding, and prosperity. He also prayed that the couple would find strength in one another and build a marriage founded on patience, mutual respect, and faith.
+
+The occasion offered another meaningful opportunity for relatives and members of the wider community to reconnect, celebrate together, and reaffirm the importance of family bonds.
+
+Shehu ABG congratulated Abdullahi and Khadija and wished them a happy, peaceful, and fulfilling married life.`,
+    tags: ['Wedding', 'Family', 'Kaduna', 'ShehuABG']
+  },
+  {
     id: 9,
     slug: 'throwback-abg-empowerment-beneficiaries',
     title: 'Throwback: Celebrating Beneficiaries of ABG Empowerment',
@@ -239,6 +262,7 @@ const BLOG_POST_PRIORITY: Record<string, number> = {
   'shehu-abg-engages-stakeholders-ahead-of-campaign-take-off': 1,
   'shehu-abg-pays-condolence-visits-in-kaduna': 2,
   'throwback-abg-empowerment-beneficiaries': 3,
+  'shehu-abg-attends-nephews-wedding-in-kaduna': 4,
 };
 
 export const BLOG_POSTS = [...BLOG_POSTS_UNORDERED].sort((a, b) =>

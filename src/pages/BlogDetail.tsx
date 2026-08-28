@@ -4,6 +4,7 @@ import { ArrowLeft, Calendar, Clock, User, Tag, ArrowRight } from 'lucide-react'
 import { BLOG_POSTS } from '../data/mockData';
 
 const categoryColors: Record<string, string> = {
+  Community: 'bg-sky-100 text-sky-800',
   Empowerment: 'bg-emerald-100 text-emerald-800',
   'Campaign Update': 'bg-green-100 text-green-800',
   Innovation: 'bg-orange-100 text-orange-700',
@@ -116,9 +117,9 @@ export default function BlogDetail() {
           {gallery.length > 0 && (
             <div className={`grid grid-cols-1 gap-5 mb-14 ${usesPortraitImages ? 'sm:grid-cols-2 lg:grid-cols-3' : 'md:grid-cols-2'}`} aria-label="Article photo gallery">
               {gallery.map((image, index) => (
-                <figure key={image} className={`relative overflow-hidden rounded-2xl bg-gray-100 ${!usesPortraitImages && index === 0 ? 'md:col-span-2' : ''}`}>
+                <figure key={image} className={`relative overflow-hidden rounded-2xl bg-gray-100 ${!usesPortraitImages && gallery.length === 3 && index === 0 ? 'md:col-span-2' : ''}`}>
                   {usesPortraitImages && <img src={image} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover scale-110 blur-xl opacity-35" />}
-                  <img src={image} alt={`Article photograph ${index + 2}`} className={`relative w-full ${usesPortraitImages ? 'aspect-[3/4] object-contain' : `object-cover ${index === 0 ? 'aspect-[3/2] md:aspect-[16/9]' : 'aspect-[3/2]'}`}`} loading="lazy" />
+                  <img src={image} alt={`Article photograph ${index + 2}`} className={`relative w-full ${usesPortraitImages ? 'aspect-[3/4] object-contain' : `object-cover ${gallery.length === 3 && index === 0 ? 'aspect-[3/2] md:aspect-[16/9]' : 'aspect-[3/2]'}`}`} loading="lazy" />
                 </figure>
               ))}
             </div>

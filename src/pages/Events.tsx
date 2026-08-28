@@ -7,6 +7,7 @@ import { BLOG_POSTS } from '../data/mockData';
 const ALL_CATEGORIES = ['All', ...Array.from(new Set(BLOG_POSTS.map(p => p.category).filter(Boolean)))];
 
 const categoryColors: Record<string, string> = {
+  Community: 'bg-sky-100 text-sky-800',
   Empowerment: 'bg-emerald-100 text-emerald-800',
   'Campaign Update': 'bg-green-100 text-green-800',
   Innovation: 'bg-orange-100 text-orange-700',
