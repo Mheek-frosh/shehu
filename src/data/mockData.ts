@@ -49,6 +49,27 @@ export const PROJECTS = [
 
 export const BLOG_POSTS = [
   {
+    id: 7,
+    slug: 'shehu-abg-engages-stakeholders-ahead-of-campaign-take-off',
+    title: 'Shehu ABG Engages Stakeholders Ahead of Campaign Take-Off',
+    category: 'Campaign Update',
+    author: 'Ibrahim A. Malali',
+    authorRole: 'DG, Media and Publicity',
+    date: 'August 28, 2026',
+    readTime: '2 min read',
+    description: 'Consultations with key stakeholders are underway across Kaduna State ahead of the official take-off of the 2027 governorship campaign.',
+    image: '/1.jpeg',
+    gallery: ['/2.jpeg', '/3.jpeg', '/4.jpeg'],
+    body: `The Peoples Democratic Party (PDP) Governorship Candidate for Kaduna State, Rt. Hon. Shehu Usman Bawa (ABG), has commenced engagements with key stakeholders across the state ahead of the official take-off of his 2027 governorship campaign.
+
+The engagements are aimed at strengthening consultations, mobilising party leaders and supporters, and fostering unity among stakeholders as the campaign prepares for a successful take-off.
+
+During the meetings, Shehu ABG reiterated his commitment to inclusive leadership and called on stakeholders to work together towards rescuing Kaduna State and providing purposeful leadership that will improve the lives of its people.
+
+The consultations are expected to continue across the various zones of the state as preparations intensify for the official campaign launch soon.`,
+    tags: ['Campaign', 'Stakeholder Engagement', 'Kaduna State', 'PDP']
+  },
+  {
     id: 1,
     slug: 'shehu-abg-civic-tech-initiative',
     title: 'Shehu ABG Announces New Civic Tech Initiative for Youth',

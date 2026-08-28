@@ -4,6 +4,7 @@ import { ArrowLeft, Calendar, Clock, User, Tag, ArrowRight } from 'lucide-react'
 import { BLOG_POSTS } from '../data/mockData';
 
 const categoryColors: Record<string, string> = {
+  'Campaign Update': 'bg-green-100 text-green-800',
   Innovation: 'bg-orange-100 text-orange-700',
   Education: 'bg-blue-100 text-blue-700',
   Agriculture: 'bg-green-100 text-green-700',
@@ -28,6 +29,8 @@ export default function BlogDetail() {
   const relatedPosts = [...related, ...others].slice(0, 3);
 
   const paragraphs = (post.body ?? post.description ?? '').split('\n\n').filter(Boolean);
+  const gallery = 'gallery' in post && Array.isArray(post.gallery) ? post.gallery : [];
+  const authorRole = 'authorRole' in post ? post.authorRole : undefined;
 
   return (
     <div className="bg-white min-h-screen">
@@ -103,6 +106,16 @@ export default function BlogDetail() {
             ))}
           </div>
 
+          {gallery.length > 0 && (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-14" aria-label="Stakeholder engagement photo gallery">
+              {gallery.map((image, index) => (
+                <figure key={image} className={`overflow-hidden rounded-2xl bg-gray-100 ${index === 0 ? 'md:col-span-2' : ''}`}>
+                  <img src={image} alt={`Shehu ABG stakeholder engagement ${index + 2}`} className={`w-full object-cover ${index === 0 ? 'aspect-[3/2] md:aspect-[16/9]' : 'aspect-[3/2]'}`} loading="lazy" />
+                </figure>
+              ))}
+            </div>
+          )}
+
           {/* Tags */}
           {post.tags && post.tags.length > 0 && (
             <div className="flex flex-wrap items-center gap-3 pt-8 border-t border-gray-100 mb-16">
@@ -125,7 +138,8 @@ export default function BlogDetail() {
           </div>
           <div>
             <p className="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-1">Written by</p>
-            <h3 className="text-xl font-display font-bold text-gray-900 mb-2">{post.author ?? 'Shehu ABG Impact Team'}</h3>
+            <h3 className="text-xl font-display font-bold text-gray-900 mb-1">{post.author ?? 'Shehu ABG Impact Team'}</h3>
+            {authorRole && <p className="text-[var(--color-pdp-green)] font-semibold text-sm mb-3">{authorRole}</p>}
             <p className="text-gray-500 text-sm leading-relaxed">
               The Shehu ABG Impact Group communications team covers civic engagement, community projects, and governance initiatives across Kaduna State.
             </p>
