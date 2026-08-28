@@ -4,7 +4,6 @@ import { ArrowLeft, Calendar, Clock, User, Tag, ArrowRight } from 'lucide-react'
 import { BLOG_POSTS } from '../data/mockData';
 
 const categoryColors: Record<string, string> = {
-  'Condolence Visit': 'bg-slate-100 text-slate-700',
   'Campaign Update': 'bg-green-100 text-green-800',
   Innovation: 'bg-orange-100 text-orange-700',
   Education: 'bg-blue-100 text-blue-700',
@@ -53,11 +52,13 @@ export default function BlogDetail() {
           transition={{ duration: 0.5 }}
         >
           {/* Category Badge */}
-          <div className="mb-6">
-            <span className={`inline-block px-4 py-1.5 rounded-full text-sm font-bold uppercase tracking-wider ${categoryColors[post.category] ?? 'bg-gray-100 text-gray-700'}`}>
-              {post.category}
-            </span>
-          </div>
+          {post.category && (
+            <div className="mb-6">
+              <span className={`inline-block px-4 py-1.5 rounded-full text-sm font-bold uppercase tracking-wider ${categoryColors[post.category] ?? 'bg-gray-100 text-gray-700'}`}>
+                {post.category}
+              </span>
+            </div>
+          )}
 
           {/* Title */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-gray-900 leading-tight mb-8">
@@ -170,9 +171,11 @@ export default function BlogDetail() {
                   <Link to={`/blog/${rp.slug}`} className="group flex flex-col rounded-3xl overflow-hidden bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-shadow h-full">
                     <div className="relative overflow-hidden aspect-video">
                       <img src={rp.image} alt={rp.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                      <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold ${categoryColors[rp.category] ?? 'bg-gray-100 text-gray-700'}`}>
-                        {rp.category}
-                      </div>
+                      {rp.category && (
+                        <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold ${categoryColors[rp.category] ?? 'bg-gray-100 text-gray-700'}`}>
+                          {rp.category}
+                        </div>
+                      )}
                     </div>
                     <div className="p-6 flex flex-col flex-grow">
                       <span className="text-xs text-gray-400 flex items-center gap-1.5 mb-3"><Calendar className="w-3.5 h-3.5" /> {rp.date}</span>

@@ -52,7 +52,7 @@ export const BLOG_POSTS = [
     id: 8,
     slug: 'shehu-abg-pays-condolence-visits-in-kaduna',
     title: 'Shehu ABG Pays Condolence Visits in Kaduna',
-    category: 'Condolence Visit',
+    category: '',
     author: 'Ibrahim A. Malali',
     authorRole: 'DG, Media & Publicity',
     date: 'August 28, 2026',

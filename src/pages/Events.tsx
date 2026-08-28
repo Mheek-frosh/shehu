@@ -4,10 +4,9 @@ import { motion } from 'framer-motion';
 import { Search, ArrowRight, Clock, Calendar, ChevronLeft, ChevronRight } from 'lucide-react';
 import { BLOG_POSTS } from '../data/mockData';
 
-const ALL_CATEGORIES = ['All', ...Array.from(new Set(BLOG_POSTS.map(p => p.category)))];
+const ALL_CATEGORIES = ['All', ...Array.from(new Set(BLOG_POSTS.map(p => p.category).filter(Boolean)))];
 
 const categoryColors: Record<string, string> = {
-  'Condolence Visit': 'bg-slate-100 text-slate-700',
   'Campaign Update': 'bg-green-100 text-green-800',
   Innovation: 'bg-orange-100 text-orange-700',
   Education: 'bg-blue-100 text-blue-700',
@@ -111,9 +110,11 @@ export default function Events() {
                           alt={post.title}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         />
-                        <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold ${categoryColors[post.category] ?? 'bg-gray-100 text-gray-700'}`}>
-                          {post.category}
-                        </div>
+                        {post.category && (
+                          <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold ${categoryColors[post.category] ?? 'bg-gray-100 text-gray-700'}`}>
+                            {post.category}
+                          </div>
+                        )}
                       </div>
                       <div className="pt-6 flex flex-col flex-grow">
                         <div className="flex items-center gap-4 text-gray-400 text-xs mb-4">
