@@ -47,7 +47,7 @@ export const PROJECTS = [
   }
 ];
 
-export const BLOG_POSTS = [
+const BLOG_POSTS_UNORDERED = [
   {
     id: 9,
     slug: 'throwback-abg-empowerment-beneficiaries',
@@ -234,6 +234,17 @@ With elections approaching, the Impact Group has committed to a second phase of 
     tags: ['Civic Action', 'Voting', 'Democracy', 'Community']
   }
 ];
+
+const BLOG_POST_PRIORITY: Record<string, number> = {
+  'shehu-abg-engages-stakeholders-ahead-of-campaign-take-off': 1,
+  'shehu-abg-pays-condolence-visits-in-kaduna': 2,
+  'throwback-abg-empowerment-beneficiaries': 3,
+};
+
+export const BLOG_POSTS = [...BLOG_POSTS_UNORDERED].sort((a, b) =>
+  (BLOG_POST_PRIORITY[a.slug] ?? Number.MAX_SAFE_INTEGER) -
+  (BLOG_POST_PRIORITY[b.slug] ?? Number.MAX_SAFE_INTEGER)
+);
 
 
 export const MANIFESTO_CATEGORIES = [
