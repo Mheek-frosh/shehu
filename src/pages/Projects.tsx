@@ -7,6 +7,11 @@ const fallbackImage = '/assets/hero-poster.png';
 
 export default function Projects() {
 	const [featuredProject, ...supportingProjects] = PROJECTS;
+	const featuredGallery = 'gallery' in featuredProject && Array.isArray(featuredProject.gallery) ? featuredProject.gallery : [];
+	const featuredStory = 'story' in featuredProject ? featuredProject.story : undefined;
+	const featuredHighlights = 'highlights' in featuredProject && Array.isArray(featuredProject.highlights) ? featuredProject.highlights : [];
+	const featuredBlogPath = 'blogPath' in featuredProject ? featuredProject.blogPath : undefined;
+	const usesPortraitImage = 'imageDisplay' in featuredProject && featuredProject.imageDisplay === 'portrait';
 
 	return (
 		<div className="bg-white min-h-screen">
@@ -27,11 +32,14 @@ export default function Projects() {
 						className="grid lg:grid-cols-12 bg-gray-50 border border-gray-100 rounded-[2rem] overflow-hidden shadow-sm"
 					>
 						<div className="lg:col-span-7 aspect-[4/3] lg:aspect-auto min-h-0 lg:min-h-[360px] relative overflow-hidden group">
+							{usesPortraitImage && (
+								<img src={featuredProject.image} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-40" />
+							)}
 							<img
 								src={featuredProject.image}
 								onError={(event) => { event.currentTarget.src = fallbackImage; }}
 								alt={featuredProject.title}
-								className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+								className={`absolute inset-0 w-full h-full group-hover:scale-105 transition-transform duration-700 ${usesPortraitImage ? 'object-contain' : 'object-cover'}`}
 							/>
 							<div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
 							<span className="absolute top-6 left-6 px-4 py-1.5 rounded-full bg-orange-100 text-orange-700 text-xs font-bold uppercase tracking-wider">Featured Project</span>
@@ -47,8 +55,40 @@ export default function Projects() {
 								<span className="inline-flex items-center gap-2"><MapPin className="w-4 h-4 text-[var(--color-pdp-green)]" />{featuredProject.location}</span>
 								<span className="inline-flex items-center gap-2"><Calendar className="w-4 h-4 text-[var(--color-pdp-green)]" />{featuredProject.date}</span>
 							</div>
+							{featuredBlogPath && (
+								<Link to={featuredBlogPath} className="inline-flex items-center w-fit mt-7 text-sm font-bold text-[var(--color-pdp-green)] hover:text-[var(--color-pdp-red)] transition-colors">
+									Explore the impact story <ArrowRight className="ml-1.5 w-4 h-4" />
+								</Link>
+							)}
 						</div>
 					</motion.article>
+
+					{featuredGallery.length > 0 && (
+						<div className="grid lg:grid-cols-12 gap-5 mt-6">
+							<div className="lg:col-span-5 rounded-3xl bg-[var(--color-pdp-green)] text-white p-8 md:p-10 flex flex-col justify-center">
+								<p className="text-xs uppercase tracking-[0.2em] text-green-200 font-bold mb-3">Impact in focus</p>
+								<h3 className="text-2xl md:text-3xl font-display font-bold mb-4">Opportunity made practical.</h3>
+								{featuredStory && <p className="text-green-50 leading-relaxed mb-7">{featuredStory}</p>}
+								<div className="space-y-3">
+									{featuredHighlights.map(highlight => (
+										<div key={highlight} className="flex items-center gap-3 text-sm font-semibold">
+											<span className="w-7 h-7 rounded-full bg-white/15 flex items-center justify-center shrink-0"><CheckCircle2 className="w-4 h-4" /></span>
+											{highlight}
+										</div>
+									))}
+								</div>
+							</div>
+
+							<div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-4">
+								{featuredGallery.map((image, index) => (
+									<figure key={image} className="relative aspect-[3/4] overflow-hidden rounded-3xl bg-gray-100 shadow-sm">
+										<img src={image} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover scale-110 blur-xl opacity-35" />
+										<img src={image} alt={`ABG empowerment beneficiary ${index + 2}`} className="relative w-full h-full object-contain" loading="lazy" />
+									</figure>
+								))}
+							</div>
+						</div>
+					)}
 				</section>
 
 				<section className="bg-gray-50 border-y border-gray-100 py-20">

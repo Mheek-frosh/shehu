@@ -16,6 +16,21 @@ export const NAV_LINKS = [
 
 export const PROJECTS = [
   {
+    id: 4,
+    title: 'ABG Mobility Empowerment Initiative',
+    category: 'Economic Empowerment',
+    location: 'Kaduna State',
+    date: 'Impact Archive',
+    status: 'Completed',
+    description: 'Providing direct mobility support to beneficiaries so they can pursue livelihoods, strengthen their independence, and create wider value within their communities.',
+    image: '/car1.jpeg',
+    gallery: ['/car2.jpeg', '/car3.jpeg', '/car4.jpeg'],
+    imageDisplay: 'portrait',
+    story: 'These beneficiary moments reflect ABG’s practical, people-centred approach to empowerment. Each presentation was designed to place a useful resource directly into the hands of an individual, creating a foundation for greater mobility, productivity, and economic participation.',
+    highlights: ['Direct beneficiary support', 'Mobility for livelihoods', 'Community-centred delivery'],
+    blogPath: '/blog/throwback-abg-empowerment-beneficiaries'
+  },
+  {
     id: 1,
     title: 'Community Healthcare Outreach',
     category: 'Healthcare',
