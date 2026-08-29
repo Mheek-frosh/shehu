@@ -63,6 +63,28 @@ export const PROJECTS = [
 
 const BLOG_POSTS_UNORDERED = [
   {
+    id: 11,
+    slug: 'shehu-abg-visits-former-kaduna-governor-ahmed-makarfi',
+    title: 'Shehu ABG Visits Former Kaduna Governor Senator Ahmed Mohammed Makarfi',
+    category: 'Stakeholder Engagement',
+    author: 'Shehu ABG Impact Team',
+    date: 'August 29, 2026',
+    readTime: '2 min read',
+    description: 'Rt. Hon. Shehu Usman Bawa (ABG) paid a visit to former Kaduna State Governor Senator Ahmed Mohammed Makarfi at his residence in Kaduna.',
+    image: '/v1.jpeg',
+    gallery: ['/v2.jpeg'],
+    body: `Rt. Hon. Shehu Usman Bawa (ABG) paid a visit to former Governor of Kaduna State, Senator Ahmed Mohammed Makarfi, at his residence in Kaduna.
+
+The visit provided an opportunity for warm interaction with the respected statesman and other leaders present at the residence. It reflected the value Shehu ABG places on maintaining meaningful relationships with experienced leaders and engaging stakeholders whose service has helped shape Kaduna State's political and public life.
+
+Senator Makarfi remains a prominent figure in Kaduna State and national politics, with a record of leadership and public service spanning several years. The cordial meeting demonstrated mutual respect and the importance of sustained dialogue among leaders committed to the progress, peace, and unity of the state.
+
+For Shehu ABG, such engagements are part of a broader commitment to listening, consultation, and building bridges across communities and generations. Constructive conversations with leaders, elders, and citizens help deepen understanding of the aspirations of the people and strengthen the shared pursuit of purposeful leadership.
+
+The visit concluded in a warm atmosphere, underscoring the enduring bonds of friendship, respect, and collective responsibility for a stronger and more prosperous Kaduna State.`,
+    tags: ['Stakeholder Engagement', 'Ahmed Makarfi', 'Kaduna', 'Leadership']
+  },
+  {
     id: 10,
     slug: 'shehu-abg-attends-nephews-wedding-in-kaduna',
     title: "Shehu ABG Attends Nephew's Wedding in Kaduna",
@@ -273,10 +295,11 @@ With elections approaching, the Impact Group has committed to a second phase of 
 ];
 
 const BLOG_POST_PRIORITY: Record<string, number> = {
-  'shehu-abg-engages-stakeholders-ahead-of-campaign-take-off': 1,
-  'shehu-abg-pays-condolence-visits-in-kaduna': 2,
-  'throwback-abg-empowerment-beneficiaries': 3,
-  'shehu-abg-attends-nephews-wedding-in-kaduna': 4,
+  'shehu-abg-visits-former-kaduna-governor-ahmed-makarfi': 1,
+  'shehu-abg-engages-stakeholders-ahead-of-campaign-take-off': 2,
+  'shehu-abg-pays-condolence-visits-in-kaduna': 3,
+  'throwback-abg-empowerment-beneficiaries': 4,
+  'shehu-abg-attends-nephews-wedding-in-kaduna': 5,
 };
 
 export const BLOG_POSTS = [...BLOG_POSTS_UNORDERED].sort((a, b) =>

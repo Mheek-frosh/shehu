@@ -7,6 +7,7 @@ const categoryColors: Record<string, string> = {
   Community: 'bg-sky-100 text-sky-800',
   Empowerment: 'bg-emerald-100 text-emerald-800',
   'Campaign Update': 'bg-green-100 text-green-800',
+  'Stakeholder Engagement': 'bg-teal-100 text-teal-800',
   Innovation: 'bg-orange-100 text-orange-700',
   Education: 'bg-blue-100 text-blue-700',
   Agriculture: 'bg-green-100 text-green-700',
