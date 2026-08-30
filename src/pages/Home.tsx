@@ -4,6 +4,10 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Activity, Award, BookOpen, Handshake, Heart, Leaf, Lightbulb, Map, Play, ShieldCheck, Users, X } from 'lucide-react';
 import { PROJECTS, BLOG_POSTS } from '../data/mockData';
 
+/**
+ * Home Page Component
+ * Introduces the campaign, highlights impact projects, and features recent blog posts.
+ */
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState<any>(null);
 

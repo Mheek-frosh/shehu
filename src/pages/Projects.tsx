@@ -5,6 +5,10 @@ import { PROJECTS } from '../data/mockData';
 
 const fallbackImage = '/assets/hero-poster.png';
 
+/**
+ * Projects Page Component
+ * Showcases the featured impact initiative, its gallery, and supporting projects.
+ */
 export default function Projects() {
 	const [featuredProject, ...supportingProjects] = PROJECTS;
 	const featuredGallery = 'gallery' in featuredProject && Array.isArray(featuredProject.gallery) ? featuredProject.gallery : [];
