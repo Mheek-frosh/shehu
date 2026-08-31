@@ -177,6 +177,31 @@ The consultations are expected to continue across the various zones of the state
     tags: ['Campaign', 'Stakeholder Engagement', 'Kaduna State', 'PDP']
   },
   {
+    id: 12,
+    slug: 'shehu-abg-visits-ailing-igabi-pdp-chairman-in-lambar-zango',
+    title: 'Shehu ABG Stops Over in Lambar Zango, Visits Ailing Igabi PDP Chairman',
+    category: 'Community Support',
+    author: 'Ibrahim Abdullahi',
+    authorRole: 'DG, Media and Publicity',
+    date: 'August 29, 2026',
+    readTime: '2 min read',
+    description: 'Shehu ABG stopped at Lambar Zango Village on his return from Zaria to visit the ailing Igabi PDP Chairman, Alhaji Musa Ismail.',
+    image: '/kd.png',
+    gallery: ['/kd1.png', '/kd2.png'],
+    body: `The Governorship Candidate of the Peoples Democratic Party (PDP) in Kaduna State, His Excellency, Rt. Hon. Shehu Usman Bawa (ABG), on Saturday made a stopover at Lambar Zango Village along the Zaria–Kaduna Road, where he paid a brief visit to the PDP Chairman of Igabi Local Government Area, Alhaji Musa Ismail, who is currently unwell.
+
+During the stopover, Rt. Hon. Shehu ABG warmly greeted Alhaji Musa Ismail and expressed sincere concern over his health condition. He conveyed his best wishes to the chairman and encouraged him as he continues his recovery.
+
+Shehu ABG prayed to Almighty Allah to grant Alhaji Musa Ismail complete healing, renewed strength, and a speedy return to his normal activities and responsibilities.
+
+The visit was also an expression of solidarity with Alhaji Musa Ismail, his family, and members of the PDP in Igabi Local Government Area. It reflected the importance of standing together and showing care during times of personal difficulty.
+
+Beyond political engagement, the brief stopover further demonstrated Shehu ABG's commitment to the welfare of PDP members and his continued support for party leaders and supporters across Kaduna State.
+
+He wished Alhaji Musa Ismail a full and lasting recovery and prayed that Almighty Allah continue to protect and strengthen him.`,
+    tags: ['Community Support', 'Igabi', 'Lambar Zango', 'PDP', 'Kaduna']
+  },
+  {
     id: 1,
     slug: 'shehu-abg-civic-tech-initiative',
     title: 'Shehu ABG Announces New Civic Tech Initiative for Youth',
