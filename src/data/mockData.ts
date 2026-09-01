@@ -57,7 +57,7 @@ export const PROJECTS = [
     date: 'August 2025',
     status: 'Completed',
     description: 'Distributing fertilizers and modern farming equipment to local farmers to boost crop yield.',
-    image: 'https://images.unsplash.com/photo-1592982537447-6f296b0266cd?auto=format&fit=crop&q=80&w=800'
+    image: 'https://images.pexels.com/photos/11982695/pexels-photo-11982695.jpeg?auto=compress&cs=tinysrgb&w=1200'
   }
 ];
 
