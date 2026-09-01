@@ -44,8 +44,8 @@ export default function About() {
 						<span className="flex items-center gap-2"><MapPin className="w-4 h-4" /> Kaduna State</span>
 					</div>
 
-					<div className="w-full aspect-[16/9] rounded-[2rem] overflow-hidden mb-12 shadow-md">
-						<img src="/assets/hero-poster.png" alt="Shehu ABG campaign vision for Kaduna State" className="w-full h-full object-cover object-top" />
+					<div className="mx-auto mb-12 max-w-2xl overflow-hidden rounded-[2rem] bg-gray-50 shadow-md">
+						<img src="/pp.png" alt="Rt. Hon. Usman S. Bawa (Shehu ABG)" className="h-auto w-full" />
 					</div>
 
 					<div className="prose prose-lg max-w-none mb-16">
