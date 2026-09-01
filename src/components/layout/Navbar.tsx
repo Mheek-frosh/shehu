@@ -18,19 +18,35 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    setIsOpen(false);
-  }, [location]);
+    if (!isOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setIsOpen(false);
+    };
+
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isOpen]);
 
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'glass py-2.5 sm:py-3' : 'bg-transparent py-3 sm:py-5'
+        scrolled || isOpen ? 'glass py-2.5 sm:py-3' : 'bg-transparent py-3 sm:py-5'
       }`}
     >
-      <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <Link to="/" className="z-50 flex items-center space-x-3">
-          <img src="/logo-transparent.png" alt="Shehu ABG Impact Initiative logo" className="h-10 sm:h-11 w-auto" />
-          <span className="text-base sm:text-xl font-display font-bold tracking-tight text-[var(--color-pdp-green)] whitespace-nowrap">Shehu ABG Impact Initiative</span>
+      <div className="container mx-auto flex items-center gap-3 px-4 md:px-6">
+        <Link to="/" onClick={() => setIsOpen(false)} className="z-50 flex min-w-0 flex-1 items-center gap-2.5 sm:gap-3">
+          <img src="/logo-transparent.png" alt="Shehu ABG Impact Initiative logo" className="h-9 w-auto shrink-0 sm:h-11" />
+          <span className="min-w-0 text-sm leading-tight font-display font-bold tracking-tight text-[var(--color-pdp-green)] sm:text-xl sm:leading-normal">
+            <span className="block sm:inline">Shehu ABG</span>{' '}
+            <span className="block sm:inline">Impact Initiative</span>
+          </span>
         </Link>
         
         {/* Desktop Nav */}
@@ -58,9 +74,10 @@ export default function Navbar() {
 
         {/* Mobile Toggle */}
         <button 
-          className="lg:hidden z-50 p-2"
+          type="button"
+          className="relative z-50 -mr-1 flex size-11 shrink-0 items-center justify-center rounded-full text-[var(--foreground)] transition-colors hover:bg-black/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-pdp-green)] lg:hidden"
           onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle Menu"
+          aria-label={isOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={isOpen}
           aria-controls="mobile-navigation"
         >
@@ -68,29 +85,35 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Fullscreen Mobile/Expanded Menu */}
+      {/* Mobile menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div 
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.2 }}
             id="mobile-navigation"
-            className="fixed inset-0 z-40 bg-[var(--background)] pt-20 sm:pt-24 px-5 sm:px-6 overflow-y-auto pb-10"
+            className="fixed inset-x-0 bottom-0 top-14 z-40 overflow-y-auto border-t border-gray-100 bg-[var(--background)] px-4 pb-[max(2rem,env(safe-area-inset-bottom))] pt-4 shadow-xl sm:top-[68px] sm:px-6 sm:pt-6 lg:hidden"
           >
             <div className="container mx-auto max-w-lg">
-              <div className="flex flex-col space-y-1">
+              <nav aria-label="Mobile navigation" className="flex flex-col">
                 {NAV_LINKS.filter((link) => ['Home', 'About', 'Projects', 'Impact Gallery', 'Events', 'Contact'].includes(link.name)).map((link) => (
                   <Link 
                     key={link.path} 
                     to={link.path}
-                    className="border-b border-gray-100 py-4 text-xl sm:text-2xl font-display font-medium hover:text-[var(--color-pdp-red)] transition-colors"
+                    onClick={() => setIsOpen(false)}
+                    aria-current={location.pathname === link.path ? 'page' : undefined}
+                    className={`flex min-h-14 items-center border-b border-gray-100 px-1 py-3 font-display text-lg font-medium transition-colors sm:text-xl ${
+                      location.pathname === link.path
+                        ? 'text-[var(--color-pdp-red)]'
+                        : 'text-[var(--foreground)] hover:text-[var(--color-pdp-red)]'
+                    }`}
                   >
                     {link.name}
                   </Link>
                 ))}
-              </div>
+              </nav>
             </div>
           </motion.div>
         )}
