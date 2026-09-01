@@ -71,7 +71,7 @@ export default function Entrepreneurship() {
 
         <section className="container mx-auto max-w-6xl px-6 py-20 text-center">
           <h2 className="mb-4 text-3xl font-display font-bold text-gray-900">Interested in future opportunities?</h2>
-          <p className="mx-auto mb-8 max-w-2xl text-lg text-gray-600">Connect with the Impact Group to share your interests, experience, or partnership ideas.</p>
+          <p className="mx-auto mb-8 max-w-2xl text-lg text-gray-600">Connect with the Impact Initiative to share your interests, experience, or partnership ideas.</p>
           <Link to="/contact" className="inline-flex items-center rounded-full bg-[var(--color-pdp-green)] px-8 py-3 font-bold text-white transition-transform hover:scale-105">Get in touch <ArrowRight className="ml-2 h-4 w-4" /></Link>
         </section>
       </main>

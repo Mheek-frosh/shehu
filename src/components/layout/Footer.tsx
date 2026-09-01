@@ -52,7 +52,7 @@ export default function Footer() {
         </div>
         
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
-          <p>© {new Date().getFullYear()} Shehu ABG Impact Group. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Shehu ABG Impact Initiative. All rights reserved.</p>
           <div className="mt-4 md:mt-0 space-x-4">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>

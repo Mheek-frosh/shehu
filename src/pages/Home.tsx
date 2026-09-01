@@ -347,7 +347,7 @@ export default function Home() {
           <span className="text-green-100 font-bold tracking-[0.2em] text-xs uppercase mb-4 block">Join the Impact</span>
           <h2 className="text-3xl md:text-5xl font-display font-bold mb-5">Stay Connected with the Impact</h2>
           <p className="text-green-50 text-lg max-w-2xl mx-auto leading-relaxed mb-8">
-            Join the Shehu ABG Impact Group community and be the first to hear about our latest initiatives and civic programs.
+            Join the Shehu ABG Impact Initiative community and be the first to hear about our latest initiatives and civic programs.
           </p>
           <Link to="/contact" className="inline-flex items-center bg-white text-[var(--color-pdp-green)] px-8 py-3.5 rounded-full font-semibold hover:bg-green-50 hover:scale-105 transition-all shadow-lg">
             Get Involved <ArrowRight className="ml-2 w-4 h-4" />

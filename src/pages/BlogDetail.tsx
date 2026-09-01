@@ -151,7 +151,7 @@ export default function BlogDetail() {
             <h3 className="text-xl font-display font-bold text-gray-900 mb-1">{post.author ?? 'Shehu ABG Impact Team'}</h3>
             {authorRole && <p className="text-[var(--color-pdp-green)] font-semibold text-sm mb-3">{authorRole}</p>}
             <p className="text-gray-500 text-sm leading-relaxed">
-              The Shehu ABG Impact Group communications team covers civic engagement, community projects, and governance initiatives across Kaduna State.
+              The Shehu ABG Impact Initiative communications team covers civic engagement, community projects, and governance initiatives across Kaduna State.
             </p>
           </div>
         </div>
@@ -210,7 +210,7 @@ export default function BlogDetail() {
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">Be part of the next chapter.</h2>
           <p className="text-green-100 text-lg mb-8 max-w-xl mx-auto">
-            Join the Impact Group and help move ideas from community conversations into lasting action.
+            Join the Impact Initiative and help move ideas from community conversations into lasting action.
           </p>
           <Link to="/contact" className="inline-block bg-white text-[var(--color-pdp-green)] font-bold px-8 py-3 rounded-full hover:bg-green-50 transition-colors shadow-lg">
             Get Involved

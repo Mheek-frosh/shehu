@@ -99,7 +99,7 @@ export default function Projects() {
 					<div className="container mx-auto px-6 max-w-6xl">
 						<div className="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-10">
 							<div>
-								<p className="text-xs uppercase tracking-widest text-[var(--color-pdp-green)] font-bold mb-3">More from the Impact Group</p>
+								<p className="text-xs uppercase tracking-widest text-[var(--color-pdp-green)] font-bold mb-3">More from the Impact Initiative</p>
 								<h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900">Projects in motion</h2>
 							</div>
 							<p className="text-gray-600 max-w-md leading-relaxed">Each project is designed around a real need and delivered with local partners who understand the communities they serve.</p>
@@ -150,7 +150,7 @@ export default function Projects() {
 				<section className="py-20 bg-[var(--color-pdp-green)]">
 					<div className="container mx-auto px-6 text-center">
 						<h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">Be part of the next chapter.</h2>
-						<p className="text-green-100 text-lg mb-8 max-w-xl mx-auto">Join the Impact Group and help move ideas from community conversations into lasting action.</p>
+						<p className="text-green-100 text-lg mb-8 max-w-xl mx-auto">Join the Impact Initiative and help move ideas from community conversations into lasting action.</p>
 						<Link to="/contact" className="inline-flex items-center bg-white text-[var(--color-pdp-green)] font-bold px-8 py-3 rounded-full hover:bg-green-50 transition-colors shadow-lg">Get Involved <ArrowRight className="ml-2 w-4 h-4" /></Link>
 					</div>
 				</section>
