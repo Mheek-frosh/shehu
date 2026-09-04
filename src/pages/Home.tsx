@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Activity, Award, BookOpen, Handshake, Heart, Leaf, Lightbulb, Map, Play, ShieldCheck, Users, X } from 'lucide-react';
@@ -23,6 +23,28 @@ export default function Home() {
   const [selectedProject, setSelectedProject] = useState<any>(null);
   const [isStoryPlaying, setIsStoryPlaying] = useState(false);
   const storyVideoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          // Pause the video if it's no longer intersecting with the viewport
+          if (!entry.isIntersecting && storyVideoRef.current && !storyVideoRef.current.paused) {
+            storyVideoRef.current.pause();
+          }
+        });
+      },
+      { threshold: 0.2 } // Triggers when 20% or less of the video is visible
+    );
+
+    if (storyVideoRef.current) {
+      observer.observe(storyVideoRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   const playStoryWithSound = async () => {
     if (!storyVideoRef.current) return;
