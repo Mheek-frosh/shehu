@@ -280,7 +280,14 @@ export default function Home() {
             {/* Featured Post */}
             <Link to={`/blog/${HOME_BLOG_POSTS[0].slug}`} className="lg:col-span-7 group block relative rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-shadow bg-gray-50 border border-gray-100 pb-6 h-full flex flex-col">
               <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] lg:aspect-[4/3] xl:aspect-[16/9] mb-6 overflow-hidden rounded-[2rem]">
-                <img src={HOME_BLOG_POSTS[0].image} alt={HOME_BLOG_POSTS[0].title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                {'imageDisplay' in HOME_BLOG_POSTS[0] && HOME_BLOG_POSTS[0].imageDisplay === 'portrait' && (
+                  <img src={HOME_BLOG_POSTS[0].image} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-40" />
+                )}
+                <img
+                  src={HOME_BLOG_POSTS[0].image}
+                  alt={HOME_BLOG_POSTS[0].title}
+                  className={`relative w-full h-full group-hover:scale-105 transition-transform duration-500 ${'imageDisplay' in HOME_BLOG_POSTS[0] && HOME_BLOG_POSTS[0].imageDisplay === 'portrait' ? 'object-contain' : 'object-cover'}`}
+                />
                 <div className="absolute top-6 left-6 bg-orange-400 text-gray-900 font-semibold px-4 py-1.5 rounded-full text-sm shadow-md">
                   {HOME_BLOG_POSTS[0].category}
                 </div>
