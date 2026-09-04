@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Activity, Award, BookOpen, Handshake, Heart, Leaf, Lightbulb, Map, ShieldCheck, Users, X } from 'lucide-react';
+import { ArrowRight, Activity, Award, BookOpen, Handshake, Heart, Leaf, Lightbulb, Map, Play, ShieldCheck, Users, X } from 'lucide-react';
 import { PROJECTS, BLOG_POSTS } from '../data/mockData';
 
 const HOME_BLOG_EXCLUSIONS = new Set([
@@ -21,6 +21,16 @@ const HOME_BLOG_POSTS = BLOG_POSTS.filter(post => !HOME_BLOG_EXCLUSIONS.has(post
  */
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState<any>(null);
+  const [isStoryPlaying, setIsStoryPlaying] = useState(false);
+  const storyVideoRef = useRef<HTMLVideoElement>(null);
+
+  const playStoryWithSound = () => {
+    if (!storyVideoRef.current) return;
+
+    storyVideoRef.current.muted = false;
+    storyVideoRef.current.volume = 1;
+    void storyVideoRef.current.play();
+  };
 
   return (
     <div className="flex flex-col w-full">
@@ -339,15 +349,30 @@ export default function Home() {
 
           <div className="relative max-w-5xl mx-auto aspect-video rounded-[2rem] overflow-hidden bg-black shadow-2xl">
             <video
+              ref={storyVideoRef}
               className="w-full h-full object-contain"
               controls
               playsInline
               preload="metadata"
+              poster="/assets/hero-poster.png"
+              src="/vison.webm"
+              onPlay={() => setIsStoryPlaying(true)}
+              onPause={() => setIsStoryPlaying(false)}
+              onEnded={() => setIsStoryPlaying(false)}
               aria-label="Watch the Shehu ABG story"
             >
-              <source src="/vison.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
+            {!isStoryPlaying && (
+              <button
+                type="button"
+                onClick={playStoryWithSound}
+                className="absolute inset-0 m-auto flex h-16 w-16 items-center justify-center rounded-full bg-[var(--color-pdp-green)] text-white shadow-xl shadow-black/30 transition-transform hover:scale-105 md:h-20 md:w-20"
+                aria-label="Play the Shehu ABG story with sound"
+              >
+                <Play size={28} fill="currentColor" className="ml-1" />
+              </button>
+            )}
           </div>
         </div>
       </section>
