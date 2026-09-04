@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Activity, Award, BookOpen, Handshake, Heart, Leaf, Lightbulb, Map, Play, ShieldCheck, Users, X } from 'lucide-react';
+import { ArrowRight, Activity, Award, BookOpen, Handshake, Heart, Leaf, Lightbulb, Map, ShieldCheck, Users, X } from 'lucide-react';
 import { PROJECTS, BLOG_POSTS } from '../data/mockData';
 
 const HOME_BLOG_EXCLUSIONS = new Set([
@@ -330,14 +330,17 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900">Watch Our Story in Action</h2>
           </div>
 
-          <div className="relative max-w-5xl mx-auto aspect-[4/3] sm:aspect-[16/8] min-h-0 sm:min-h-72 rounded-[2rem] overflow-hidden shadow-2xl group">
-            <img src="/assets/hero-poster.png" alt="Shehu ABG campaign story" className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-950/75 via-gray-950/40 to-gray-950/20" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <Link to="/about" aria-label="Watch the Shehu ABG story" className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[var(--color-pdp-green)] text-white flex items-center justify-center shadow-xl shadow-black/20 hover:scale-110 transition-transform">
-                <Play size={28} fill="currentColor" className="ml-1" />
-              </Link>
-            </div>
+          <div className="relative max-w-5xl mx-auto aspect-video rounded-[2rem] overflow-hidden bg-black shadow-2xl">
+            <video
+              className="w-full h-full object-contain"
+              controls
+              playsInline
+              preload="metadata"
+              aria-label="Watch the Shehu ABG story"
+            >
+              <source src="/vison.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </section>
