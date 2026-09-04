@@ -63,6 +63,25 @@ export const PROJECTS = [
 
 const BLOG_POSTS_UNORDERED = [
   {
+    id: 13,
+    slug: 'new-era-of-prosperity-abg-aag-path-to-true-development',
+    title: 'New Era of Prosperity: ABG/AAG and the Path to True Development',
+    category: 'Governance',
+    author: 'El-Masjid Abdul Umar (Masallaci)',
+    date: 'August 03, 2026',
+    readTime: '4 min read',
+    description: 'A vision for accountable leadership, inclusive growth, equitable investment, and lasting prosperity across Kaduna State.',
+    image: '/assets/hero-poster.png',
+    body: `Across Kaduna State, a quiet resolve is taking root, a collective longing for governance that delivers, leadership that listens, and progress that leaves no community behind. It is this deep-seated hope that defines the moment we stand in today, as Hon. Usman Bawa ABG and Hon. Amos Adamu Gandu step forward with a vision forged in service, integrity, and an unshakable commitment to the common good. Theirs is not merely a political aspiration; it is a solemn promise to usher in a New Era of Prosperity, one built not on grand rhetoric or fleeting gestures, but on enduring structures, shared opportunity, and accountable leadership.
+
+For too long, the people of Kaduna have borne the weight of unfulfilled pledges. Budgets are announced with fanfare, yet roads crumble, critical projects lie abandoned, and the most vulnerable among us see little reflection of public investment in their daily lives. Development cannot exist in speeches alone; it must be tangible, visible, and felt in every home, every farm, and every marketplace. It is this gap between promise and reality that the ABG/AAG ticket exists to close. Drawing from a wealth of experience in both private enterprise and public service, Hon. Usman Bawa ABG understands that true prosperity grows from transparency, fiscal discipline, and a governance model that places the people's interest above all else. Paired with Hon. Amos Adamu Gandu, a leader whose own career is marked by diligence, empathy, and a deep connection to grassroots communities, they bring a balanced, purposeful partnership ready to meet Kaduna's most pressing challenges.
+
+Their vision for development rests on three unshakable pillars: inclusive economic growth, equitable social investment, and uncompromising security. They believe that prosperity must reach every corner of our state, from the bustling heart of Kaduna city to the remotest village, and that no region, no ethnicity, and no faith community should ever be left behind. Under their leadership, public funds will be deployed with clear accountability toward reviving critical infrastructure, revitalizing agriculture to secure food sufficiency, empowering our youth with skills and opportunity, and rebuilding trust between government and the governed. Where others see obstacles, ABG sees potential: potential in our people, potential in our resources, and the boundless possibility of a unified, progressive Kaduna.
+
+This is more than a change of leadership; it is a transformation of governance itself. It marks the end of exclusion and the beginning of a government that walks among its people, answers to them, and works tirelessly to lift every citizen up. As we approach 2027, the path to true development stands clear. It is the path of integrity over expediency, service over self-interest, and shared prosperity over selective progress. Together, with Hon. Usman Bawa ABG and Hon. Amos Adamu Gandu at the helm, we do not merely look forward to a better Kaduna; we build it together. The new era has dawned, and its name is prosperity for all.`,
+    tags: ['ABG/AAG', 'Prosperity', 'Governance', 'Kaduna 2027']
+  },
+  {
     id: 11,
     slug: 'shehu-abg-visits-former-kaduna-governor-ahmed-makarfi',
     title: 'Shehu ABG Visits Former Kaduna Governor Senator Ahmed Mohammed Makarfi',
@@ -320,11 +339,12 @@ With elections approaching, the Impact Initiative has committed to a second phas
 ];
 
 const BLOG_POST_PRIORITY: Record<string, number> = {
-  'shehu-abg-visits-former-kaduna-governor-ahmed-makarfi': 1,
-  'shehu-abg-engages-stakeholders-ahead-of-campaign-take-off': 2,
-  'shehu-abg-pays-condolence-visits-in-kaduna': 3,
-  'throwback-abg-empowerment-beneficiaries': 4,
-  'shehu-abg-attends-nephews-wedding-in-kaduna': 5,
+  'new-era-of-prosperity-abg-aag-path-to-true-development': 1,
+  'shehu-abg-visits-former-kaduna-governor-ahmed-makarfi': 2,
+  'shehu-abg-engages-stakeholders-ahead-of-campaign-take-off': 3,
+  'shehu-abg-pays-condolence-visits-in-kaduna': 4,
+  'throwback-abg-empowerment-beneficiaries': 5,
+  'shehu-abg-attends-nephews-wedding-in-kaduna': 6,
 };
 
 export const BLOG_POSTS = [...BLOG_POSTS_UNORDERED].sort((a, b) =>

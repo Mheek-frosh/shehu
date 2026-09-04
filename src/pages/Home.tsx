@@ -13,7 +13,7 @@ const HOME_BLOG_EXCLUSIONS = new Set([
   'pvc-registration-drive-2025',
 ]);
 
-const HOME_BLOG_POSTS = BLOG_POSTS.filter(post => !HOME_BLOG_EXCLUSIONS.has(post.slug));
+const HOME_BLOG_POSTS = BLOG_POSTS.filter(post => !HOME_BLOG_EXCLUSIONS.has(post.slug)).slice(0, 6);
 
 /**
  * Home Page Component

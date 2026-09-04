@@ -17,6 +17,7 @@ const categoryColors: Record<string, string> = {
   Partnership: 'bg-purple-100 text-purple-700',
   Recognition: 'bg-yellow-100 text-yellow-700',
   'Civic Action': 'bg-red-100 text-red-700',
+  Governance: 'bg-indigo-100 text-indigo-700',
 };
 
 /**
