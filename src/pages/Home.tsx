@@ -24,12 +24,20 @@ export default function Home() {
   const [isStoryPlaying, setIsStoryPlaying] = useState(false);
   const storyVideoRef = useRef<HTMLVideoElement>(null);
 
-  const playStoryWithSound = () => {
+  const playStoryWithSound = async () => {
     if (!storyVideoRef.current) return;
 
-    storyVideoRef.current.muted = false;
-    storyVideoRef.current.volume = 1;
-    void storyVideoRef.current.play();
+    try {
+      storyVideoRef.current.muted = false;
+      storyVideoRef.current.volume = 1;
+      await storyVideoRef.current.play();
+    } catch (error) {
+      console.error("Failed to play the video:", error);
+      // Fallback: try playing muted if the browser blocked unmuted autoplay, 
+      // even though this is a user gesture.
+      storyVideoRef.current.muted = true;
+      storyVideoRef.current.play().catch(e => console.error("Playback failed entirely:", e));
+    }
   };
 
   return (
