@@ -4,11 +4,19 @@ import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { NAV_LINKS } from '../../data/mockData';
 
+/**
+ * Navbar Component
+ * Provides responsive navigation for the application.
+ * Features a sticky header that changes style on scroll and a mobile menu with animation.
+ */
 export default function Navbar() {
+  // State for mobile menu open/close
   const [isOpen, setIsOpen] = useState(false);
+  // State to track if the user has scrolled down (for styling)
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
+  // Effect to add a shadow/background to the navbar when scrolling past 20px
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -17,14 +25,19 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Effect to handle mobile menu side-effects (prevent scrolling on body, close on resize/escape)
   useEffect(() => {
     if (!isOpen) return;
 
+    // Lock body scrolling when the mobile menu is open
     const previousOverflow = document.body.style.overflow;
     const desktopMediaQuery = window.matchMedia('(min-width: 1024px)');
+    
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') setIsOpen(false);
     };
+    
+    // Auto-close mobile menu if the screen resizes to desktop view
     const handleDesktopChange = (event: MediaQueryListEvent) => {
       if (event.matches) setIsOpen(false);
     };
@@ -34,6 +47,7 @@ export default function Navbar() {
     desktopMediaQuery.addEventListener('change', handleDesktopChange);
 
     return () => {
+      // Restore previous overflow state when the menu is closed
       document.body.style.overflow = previousOverflow;
       window.removeEventListener('keydown', handleKeyDown);
       desktopMediaQuery.removeEventListener('change', handleDesktopChange);
