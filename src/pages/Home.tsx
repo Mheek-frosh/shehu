@@ -323,11 +323,13 @@ export default function Home() {
                 {'imageDisplay' in HOME_BLOG_POSTS[0] && HOME_BLOG_POSTS[0].imageDisplay === 'portrait' && (
                   <img src={HOME_BLOG_POSTS[0].image} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-40" />
                 )}
-                <img
+                {'video' in HOME_BLOG_POSTS[0] && HOME_BLOG_POSTS[0].video ? (
+                  <video src={`${HOME_BLOG_POSTS[0].video}#t=0.1`} muted playsInline preload="metadata" aria-label={HOME_BLOG_POSTS[0].title} className="relative w-full h-full object-cover" />
+                ) : <img
                   src={HOME_BLOG_POSTS[0].image}
                   alt={HOME_BLOG_POSTS[0].title}
                   className={`relative w-full h-full group-hover:scale-105 transition-transform duration-500 ${'imageDisplay' in HOME_BLOG_POSTS[0] && HOME_BLOG_POSTS[0].imageDisplay === 'portrait' ? 'object-contain' : 'object-cover'}`}
-                />
+                />}
                 <div className="absolute top-6 left-6 bg-orange-400 text-gray-900 font-semibold px-4 py-1.5 rounded-full text-sm shadow-md">
                   {HOME_BLOG_POSTS[0].category}
                 </div>

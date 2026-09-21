@@ -112,11 +112,13 @@ export default function Events() {
                         {'imageDisplay' in post && post.imageDisplay === 'portrait' && (
                           <img src={post.image} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover scale-110 blur-xl opacity-40" />
                         )}
-                        <img
+                        {'video' in post && post.video ? (
+                          <video src={`${post.video}#t=0.1`} muted playsInline preload="metadata" aria-label={post.title} className="relative w-full h-full object-cover" />
+                        ) : <img
                           src={post.image}
                           alt={post.title}
                           className={`relative w-full h-full group-hover:scale-105 transition-transform duration-700 ${'imageDisplay' in post && post.imageDisplay === 'portrait' ? 'object-contain' : 'object-cover'}`}
-                        />
+                        />}
                         {post.category && (
                           <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold ${categoryColors[post.category] ?? 'bg-gray-100 text-gray-700'}`}>
                             {post.category}

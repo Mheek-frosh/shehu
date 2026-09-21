@@ -63,6 +63,33 @@ export const PROJECTS = [
 
 const BLOG_POSTS_UNORDERED = [
   {
+    id: 14,
+    slug: 'abg-campaign-office-kaduna-ready-for-the-peoples-agenda-2027',
+    title: "ABG Campaign Office in Kaduna Ready for The People's Agenda 2027",
+    category: 'Campaign Update',
+    author: 'El-Masjid Abdul Umar (Masallaci)',
+    date: 'September 19, 2026',
+    readTime: '2 min read',
+    description: 'The Hon. Usman S. Bawa, ABG Campaign Office in Kaduna is fully set and ready to commence campaign activities in earnest.',
+    image: '/shehu-abg-logo.png',
+    video: '/latvid.mp4',
+    body: `This is the Hon. Usman S. Bawa, ABG Campaign Office in Kaduna, fully set and ready to commence campaign activities in earnest.
+
+The atmosphere here tells the story of a movement that is prepared, organized and determined. The office is beautifully branded, adorned with the vibrant colours of the Peoples Democratic Party, the green, white and red flags flying proudly, and lined with bold banners carrying the message that resonates with the people, THE PEOPLE'S AGENDA 2027.
+
+This is not just a campaign office, it is a statement of intent. It reflects the seriousness, the structure and the people-centred vision of Rt. Hon. Usman Bawa ABG, a man who has served with distinction in the House of Representatives and who understands the yearnings of the people of Kaduna State.
+
+From the strategic location to the meticulous arrangement of campaign materials, everything indicates that the ABG team is not coming to play politics as usual, but to present a credible alternative anchored on experience, capacity and compassion for the people.
+
+As preparations are being finalized, one thing is clear, Kaduna is about to witness a campaign driven by substance, by connection to the grassroots, and by a genuine desire to restore hope.
+
+The People's Agenda has begun. The movement is ready. Allah ya bamu Sa'a
+
+©️El-Masjid Abdul Umar (Masallaci)
+September 19, 2026`,
+    tags: ['Campaign Update', "The People's Agenda 2027", 'Kaduna', 'ABG']
+  },
+  {
     id: 13,
     slug: 'new-era-of-prosperity-abg-aag-path-to-true-development',
     title: 'New Era of Prosperity: ABG/AAG and the Path to True Development',
@@ -340,6 +367,7 @@ With elections approaching, the Impact Initiative has committed to a second phas
 ];
 
 const BLOG_POST_PRIORITY: Record<string, number> = {
+  'abg-campaign-office-kaduna-ready-for-the-peoples-agenda-2027': -1,
   'new-era-of-prosperity-abg-aag-path-to-true-development': 1,
   'shehu-abg-visits-former-kaduna-governor-ahmed-makarfi': 2,
   'shehu-abg-engages-stakeholders-ahead-of-campaign-take-off': 3,

@@ -95,11 +95,15 @@ export default function BlogDetail() {
             {usesPortraitImages && (
               <img src={post.image} alt="" aria-hidden="true" className="absolute w-full h-full object-cover scale-110 blur-2xl opacity-40" />
             )}
-            <img
+            {'video' in post && post.video ? (
+              <video src={post.video} controls playsInline preload="metadata" aria-label={post.title} className="relative w-full h-full object-contain bg-black">
+                Your browser does not support video. <a href={post.video}>Download the video</a>.
+              </video>
+            ) : <img
               src={post.image}
               alt={post.title}
               className={`relative w-full h-full ${usesPortraitImages ? 'object-contain' : 'object-cover'}`}
-            />
+            />}
           </div>
 
           {/* Body Content */}
