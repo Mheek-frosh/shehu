@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { NAV_LINKS } from '../../data/mockData';
+import LanguageToggle from './LanguageToggle';
 
 /**
  * Navbar Component
@@ -92,6 +93,8 @@ export default function Navbar() {
               Join Us
             </Link>
           </nav>
+
+          <LanguageToggle />
 
           {/* Mobile Toggle */}
           <button
